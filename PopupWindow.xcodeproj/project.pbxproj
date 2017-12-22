@@ -10,6 +10,16 @@
 		92012B961FECF7690001DDD2 /* PopupWindow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92012B8C1FECF7680001DDD2 /* PopupWindow.framework */; };
 		92012B9B1FECF7690001DDD2 /* PopupWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012B9A1FECF7690001DDD2 /* PopupWindowTests.swift */; };
 		92012B9D1FECF7690001DDD2 /* PopupWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 92012B8F1FECF7680001DDD2 /* PopupWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92012BEB1FECF97D0001DDD2 /* PopupContainerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE01FECF97D0001DDD2 /* PopupContainerWindow.swift */; };
+		92012BEC1FECF97D0001DDD2 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */; };
+		92012BED1FECF97D0001DDD2 /* CGRect+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE31FECF97D0001DDD2 /* CGRect+Inset.swift */; };
+		92012BEE1FECF97D0001DDD2 /* UIView+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE41FECF97D0001DDD2 /* UIView+Shape.swift */; };
+		92012BEF1FECF97D0001DDD2 /* PopupViewCotainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE51FECF97D0001DDD2 /* PopupViewCotainable.swift */; };
+		92012BF01FECF97D0001DDD2 /* PopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE61FECF97D0001DDD2 /* PopupItem.swift */; };
+		92012BF11FECF97D0001DDD2 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */; };
+		92012BF21FECF97D0001DDD2 /* PopupPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE81FECF97D0001DDD2 /* PopupPresentable.swift */; };
+		92012BF31FECF97D0001DDD2 /* PopupViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */; };
+		92012BF41FECF97D0001DDD2 /* PopupViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +39,16 @@
 		92012B951FECF7690001DDD2 /* PopupWindowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopupWindowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92012B9A1FECF7690001DDD2 /* PopupWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowTests.swift; sourceTree = "<group>"; };
 		92012B9C1FECF7690001DDD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92012BE01FECF97D0001DDD2 /* PopupContainerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainerWindow.swift; sourceTree = "<group>"; };
+		92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowManager.swift; sourceTree = "<group>"; };
+		92012BE31FECF97D0001DDD2 /* CGRect+Inset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Inset.swift"; sourceTree = "<group>"; };
+		92012BE41FECF97D0001DDD2 /* UIView+Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shape.swift"; sourceTree = "<group>"; };
+		92012BE51FECF97D0001DDD2 /* PopupViewCotainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewCotainable.swift; sourceTree = "<group>"; };
+		92012BE61FECF97D0001DDD2 /* PopupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupItem.swift; sourceTree = "<group>"; };
+		92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainerView.swift; sourceTree = "<group>"; };
+		92012BE81FECF97D0001DDD2 /* PopupPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupPresentable.swift; sourceTree = "<group>"; };
+		92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewDirection.swift; sourceTree = "<group>"; };
+		92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +91,15 @@
 		92012B8E1FECF7680001DDD2 /* PopupWindow */ = {
 			isa = PBXGroup;
 			children = (
+				92012BE21FECF97D0001DDD2 /* Extensions */,
+				92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */,
+				92012BE01FECF97D0001DDD2 /* PopupContainerWindow.swift */,
+				92012BE61FECF97D0001DDD2 /* PopupItem.swift */,
+				92012BE81FECF97D0001DDD2 /* PopupPresentable.swift */,
+				92012BE51FECF97D0001DDD2 /* PopupViewCotainable.swift */,
+				92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */,
+				92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */,
+				92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */,
 				92012B8F1FECF7680001DDD2 /* PopupWindow.h */,
 				92012B901FECF7680001DDD2 /* Info.plist */,
 			);
@@ -84,6 +113,15 @@
 				92012B9C1FECF7690001DDD2 /* Info.plist */,
 			);
 			path = PopupWindowTests;
+			sourceTree = "<group>";
+		};
+		92012BE21FECF97D0001DDD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				92012BE31FECF97D0001DDD2 /* CGRect+Inset.swift */,
+				92012BE41FECF97D0001DDD2 /* UIView+Shape.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +186,7 @@
 				TargetAttributes = {
 					92012B8B1FECF7680001DDD2 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					92012B941FECF7690001DDD2 = {
@@ -196,6 +235,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92012BEC1FECF97D0001DDD2 /* PopupWindowManager.swift in Sources */,
+				92012BF41FECF97D0001DDD2 /* PopupViewType.swift in Sources */,
+				92012BED1FECF97D0001DDD2 /* CGRect+Inset.swift in Sources */,
+				92012BF31FECF97D0001DDD2 /* PopupViewDirection.swift in Sources */,
+				92012BF21FECF97D0001DDD2 /* PopupPresentable.swift in Sources */,
+				92012BEE1FECF97D0001DDD2 /* UIView+Shape.swift in Sources */,
+				92012BF01FECF97D0001DDD2 /* PopupItem.swift in Sources */,
+				92012BEF1FECF97D0001DDD2 /* PopupViewCotainable.swift in Sources */,
+				92012BEB1FECF97D0001DDD2 /* PopupContainerWindow.swift in Sources */,
+				92012BF11FECF97D0001DDD2 /* PopupContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +383,7 @@
 		92012BA11FECF7690001DDD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shin884.PopupWindow;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +405,7 @@
 		92012BA21FECF7690001DDD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +426,7 @@
 		92012BA41FECF7690001DDD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PopupWindowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +440,7 @@
 		92012BA51FECF7690001DDD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PopupWindowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
