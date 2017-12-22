@@ -14,6 +14,16 @@
 		92012BBD1FECF78C0001DDD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92012BBB1FECF78C0001DDD2 /* LaunchScreen.storyboard */; };
 		92012BC81FECF78C0001DDD2 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BC71FECF78C0001DDD2 /* DemoTests.swift */; };
 		92012BD31FECF78C0001DDD2 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BD21FECF78C0001DDD2 /* DemoUITests.swift */; };
+		92012BF61FECFBAB0001DDD2 /* DemoPopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BF51FECFBAB0001DDD2 /* DemoPopupCell.swift */; };
+		92012BFA1FECFBB70001DDD2 /* UIColor+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BF81FECFBB70001DDD2 /* UIColor+Background.swift */; };
+		92012BFB1FECFBB70001DDD2 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BF91FECFBB70001DDD2 /* UIView+Shadow.swift */; };
+		92012C001FECFBD60001DDD2 /* DemoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BFD1FECFBD60001DDD2 /* DemoPopupView.swift */; };
+		92012C011FECFBD60001DDD2 /* DemoPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012BFE1FECFBD60001DDD2 /* DemoPopupView.xib */; };
+		92012C021FECFBD60001DDD2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BFF1FECFBD60001DDD2 /* PopupViewController.swift */; };
+		92012C071FECFBDF0001DDD2 /* DemoToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C041FECFBDF0001DDD2 /* DemoToastView.swift */; };
+		92012C081FECFBDF0001DDD2 /* DemoToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012C051FECFBDF0001DDD2 /* DemoToastView.xib */; };
+		92012C091FECFBDF0001DDD2 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C061FECFBDF0001DDD2 /* ToastViewController.swift */; };
+		92012C0B1FECFBF00001DDD2 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C0A1FECFBF00001DDD2 /* Nibable.swift */; };
 		9BF86F30C612FF4E954483CA /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E632FE01ABF27D45343426A6 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +59,16 @@
 		92012BCE1FECF78C0001DDD2 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92012BD21FECF78C0001DDD2 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		92012BD41FECF78C0001DDD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92012BF51FECFBAB0001DDD2 /* DemoPopupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupCell.swift; sourceTree = "<group>"; };
+		92012BF81FECFBB70001DDD2 /* UIColor+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Background.swift"; sourceTree = "<group>"; };
+		92012BF91FECFBB70001DDD2 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		92012BFD1FECFBD60001DDD2 /* DemoPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupView.swift; sourceTree = "<group>"; };
+		92012BFE1FECFBD60001DDD2 /* DemoPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoPopupView.xib; sourceTree = "<group>"; };
+		92012BFF1FECFBD60001DDD2 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		92012C041FECFBDF0001DDD2 /* DemoToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoToastView.swift; sourceTree = "<group>"; };
+		92012C051FECFBDF0001DDD2 /* DemoToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoToastView.xib; sourceTree = "<group>"; };
+		92012C061FECFBDF0001DDD2 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
+		92012C0A1FECFBF00001DDD2 /* Nibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
 		E632FE01ABF27D45343426A6 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0498A09B261C3611840301 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				92012BB21FECF78C0001DDD2 /* AppDelegate.swift */,
+				92012C0A1FECFBF00001DDD2 /* Nibable.swift */,
 				92012BB41FECF78C0001DDD2 /* ViewController.swift */,
+				92012BF51FECFBAB0001DDD2 /* DemoPopupCell.swift */,
+				92012BF71FECFBB70001DDD2 /* Extension */,
+				92012BFC1FECFBD60001DDD2 /* Popup */,
+				92012C031FECFBDF0001DDD2 /* Toast */,
 				92012BB61FECF78C0001DDD2 /* Main.storyboard */,
 				92012BB91FECF78C0001DDD2 /* Assets.xcassets */,
 				92012BBB1FECF78C0001DDD2 /* LaunchScreen.storyboard */,
@@ -138,6 +163,35 @@
 				92012BD41FECF78C0001DDD2 /* Info.plist */,
 			);
 			path = DemoUITests;
+			sourceTree = "<group>";
+		};
+		92012BF71FECFBB70001DDD2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92012BF81FECFBB70001DDD2 /* UIColor+Background.swift */,
+				92012BF91FECFBB70001DDD2 /* UIView+Shadow.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		92012BFC1FECFBD60001DDD2 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				92012BFF1FECFBD60001DDD2 /* PopupViewController.swift */,
+				92012BFD1FECFBD60001DDD2 /* DemoPopupView.swift */,
+				92012BFE1FECFBD60001DDD2 /* DemoPopupView.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		92012C031FECFBDF0001DDD2 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				92012C061FECFBDF0001DDD2 /* ToastViewController.swift */,
+				92012C041FECFBDF0001DDD2 /* DemoToastView.swift */,
+				92012C051FECFBDF0001DDD2 /* DemoToastView.xib */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		B4B38E5800F3F52E9FB90378 /* Pods */ = {
@@ -261,6 +315,8 @@
 			files = (
 				92012BBD1FECF78C0001DDD2 /* LaunchScreen.storyboard in Resources */,
 				92012BBA1FECF78C0001DDD2 /* Assets.xcassets in Resources */,
+				92012C011FECFBD60001DDD2 /* DemoPopupView.xib in Resources */,
+				92012C081FECFBDF0001DDD2 /* DemoToastView.xib in Resources */,
 				92012BB81FECF78C0001DDD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +397,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92012BB51FECF78C0001DDD2 /* ViewController.swift in Sources */,
+				92012C071FECFBDF0001DDD2 /* DemoToastView.swift in Sources */,
+				92012BFB1FECFBB70001DDD2 /* UIView+Shadow.swift in Sources */,
+				92012BF61FECFBAB0001DDD2 /* DemoPopupCell.swift in Sources */,
+				92012C091FECFBDF0001DDD2 /* ToastViewController.swift in Sources */,
 				92012BB31FECF78C0001DDD2 /* AppDelegate.swift in Sources */,
+				92012C001FECFBD60001DDD2 /* DemoPopupView.swift in Sources */,
+				92012BFA1FECFBB70001DDD2 /* UIColor+Background.swift in Sources */,
+				92012C021FECFBD60001DDD2 /* PopupViewController.swift in Sources */,
+				92012C0B1FECFBF00001DDD2 /* Nibable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
