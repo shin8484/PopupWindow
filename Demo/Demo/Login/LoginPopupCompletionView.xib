@@ -19,12 +19,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifV-SO-LuR">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-5L-mMF">
-                            <rect key="frame" x="16" y="16" width="32" height="32"/>
-                            <color key="backgroundColor" red="0.46651934900000003" green="0.96428889039999999" blue="0.76720378889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-5L-mMF">
+                            <rect key="frame" x="16" y="19" width="26" height="26"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="32" id="5wm-XX-mdx"/>
-                                <constraint firstAttribute="height" constant="32" id="Pmt-Ya-oU3"/>
+                                <constraint firstAttribute="width" constant="26" id="5wm-XX-mdx"/>
+                                <constraint firstAttribute="height" constant="26" id="Pmt-Ya-oU3"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-40-cpN">
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="-1001" y="108"/>
         </view>
     </objects>
+    <resources>
+        <image name="man" width="32" height="32"/>
+    </resources>
 </document>
