@@ -74,7 +74,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let popupItem = PopupItem(view: DemoToastView.view(), frame: ToastViewController.Const.toastViewFrame, type: .normal, direction: .top, margin: 0, hasBlur: false)
             PopupWindowManager.shared.changeKeyWindow(rootViewController:  ToastViewController(popupItem: popupItem))
 
-
         } else if indexPath.row == 1 {
             let popupItem = PopupItem(view: DemoToastView.view(), frame: ToastViewController.Const.toastViewFrame, type: .normal, direction: .bottom, margin: 0, hasBlur: false)
             PopupWindowManager.shared.changeKeyWindow(rootViewController:  ToastViewController(popupItem: popupItem))
@@ -87,6 +86,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let popupItem = PopupItem(view: DemoPopupView.view(), frame: PopupViewController.Const.popupViewFrame, type: .rounded(cornerSize: 10), direction: .bottom, margin: 16, hasBlur: true)
             PopupWindowManager.shared.changeKeyWindow(rootViewController:  PopupViewController(popupItem: popupItem))
 
-        } 
+        } else if indexPath.row == 4 {
+            PopupWindowManager.shared.changeKeyWindow(rootViewController: LoginPopupViewController())
+        }
     }
 }

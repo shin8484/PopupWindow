@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="d9v-B9-HdY" customClass="LoginPopupLoadView" customModule="Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldi-83-aAa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kB3-Ja-6cd">
+                            <rect key="frame" x="171" y="35" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="76v-JP-jQM"/>
+                                <constraint firstAttribute="width" constant="32" id="rdW-sf-i2A"/>
+                            </constraints>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68e-rn-Xb6">
+                            <rect key="frame" x="150" y="75" width="75" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="Os0-3E-rIa"/>
+                            </constraints>
+                            <string key="text">Please wait
+Logging in</string>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="kB3-Ja-6cd" firstAttribute="centerX" secondItem="ldi-83-aAa" secondAttribute="centerX" id="YeB-Aj-DBA"/>
+                        <constraint firstItem="68e-rn-Xb6" firstAttribute="top" secondItem="kB3-Ja-6cd" secondAttribute="bottom" constant="8" id="ign-c7-5lW"/>
+                        <constraint firstItem="kB3-Ja-6cd" firstAttribute="top" secondItem="ldi-83-aAa" secondAttribute="top" constant="35" id="lRm-YJ-fDN"/>
+                        <constraint firstItem="68e-rn-Xb6" firstAttribute="centerX" secondItem="ldi-83-aAa" secondAttribute="centerX" id="lcp-Y1-XvR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ldi-83-aAa" firstAttribute="leading" secondItem="9QX-yZ-4cX" secondAttribute="leading" id="KBn-eI-27y"/>
+                <constraint firstItem="9QX-yZ-4cX" firstAttribute="trailing" secondItem="ldi-83-aAa" secondAttribute="trailing" id="Kce-G2-XNd"/>
+                <constraint firstItem="ldi-83-aAa" firstAttribute="top" secondItem="9QX-yZ-4cX" secondAttribute="top" id="sRI-eI-ymq"/>
+                <constraint firstItem="9QX-yZ-4cX" firstAttribute="bottom" secondItem="ldi-83-aAa" secondAttribute="bottom" id="yg0-Qc-467"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="9QX-yZ-4cX"/>
+            <connections>
+                <outlet property="activityIndicator" destination="kB3-Ja-6cd" id="thy-GO-f0w"/>
+                <outlet property="containerView" destination="ldi-83-aAa" id="49g-GZ-x3S"/>
+                <outlet property="waitlabel" destination="68e-rn-Xb6" id="qFv-VW-cfc"/>
+            </connections>
+            <point key="canvasLocation" x="-75.5" y="-25"/>
+        </view>
+    </objects>
+</document>

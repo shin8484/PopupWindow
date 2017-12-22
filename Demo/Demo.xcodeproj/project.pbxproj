@@ -24,6 +24,13 @@
 		92012C081FECFBDF0001DDD2 /* DemoToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012C051FECFBDF0001DDD2 /* DemoToastView.xib */; };
 		92012C091FECFBDF0001DDD2 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C061FECFBDF0001DDD2 /* ToastViewController.swift */; };
 		92012C0B1FECFBF00001DDD2 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C0A1FECFBF00001DDD2 /* Nibable.swift */; };
+		92012C141FECFCD50001DDD2 /* LoginPopupCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C0D1FECFCD40001DDD2 /* LoginPopupCompletionView.swift */; };
+		92012C151FECFCD50001DDD2 /* LoginPopupCompletionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012C0E1FECFCD40001DDD2 /* LoginPopupCompletionView.xib */; };
+		92012C161FECFCD50001DDD2 /* LoginPopupLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C0F1FECFCD40001DDD2 /* LoginPopupLoadView.swift */; };
+		92012C171FECFCD50001DDD2 /* LoginPopupLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012C101FECFCD40001DDD2 /* LoginPopupLoadView.xib */; };
+		92012C181FECFCD50001DDD2 /* LoginPopupSNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C111FECFCD40001DDD2 /* LoginPopupSNSView.swift */; };
+		92012C191FECFCD50001DDD2 /* LoginPopupSNSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012C121FECFCD40001DDD2 /* LoginPopupSNSView.xib */; };
+		92012C1A1FECFCD50001DDD2 /* LoginPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C131FECFCD40001DDD2 /* LoginPopupViewController.swift */; };
 		9BF86F30C612FF4E954483CA /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E632FE01ABF27D45343426A6 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +76,13 @@
 		92012C051FECFBDF0001DDD2 /* DemoToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoToastView.xib; sourceTree = "<group>"; };
 		92012C061FECFBDF0001DDD2 /* ToastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 		92012C0A1FECFBF00001DDD2 /* Nibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
+		92012C0D1FECFCD40001DDD2 /* LoginPopupCompletionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupCompletionView.swift; sourceTree = "<group>"; };
+		92012C0E1FECFCD40001DDD2 /* LoginPopupCompletionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPopupCompletionView.xib; sourceTree = "<group>"; };
+		92012C0F1FECFCD40001DDD2 /* LoginPopupLoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupLoadView.swift; sourceTree = "<group>"; };
+		92012C101FECFCD40001DDD2 /* LoginPopupLoadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPopupLoadView.xib; sourceTree = "<group>"; };
+		92012C111FECFCD40001DDD2 /* LoginPopupSNSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupSNSView.swift; sourceTree = "<group>"; };
+		92012C121FECFCD40001DDD2 /* LoginPopupSNSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPopupSNSView.xib; sourceTree = "<group>"; };
+		92012C131FECFCD40001DDD2 /* LoginPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupViewController.swift; sourceTree = "<group>"; };
 		E632FE01ABF27D45343426A6 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0498A09B261C3611840301 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,11 +146,11 @@
 		92012BB11FECF78C0001DDD2 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				92012BB21FECF78C0001DDD2 /* AppDelegate.swift */,
-				92012C0A1FECFBF00001DDD2 /* Nibable.swift */,
-				92012BB41FECF78C0001DDD2 /* ViewController.swift */,
-				92012BF51FECFBAB0001DDD2 /* DemoPopupCell.swift */,
+				92012C1B1FECFDAB0001DDD2 /* Base */,
 				92012BF71FECFBB70001DDD2 /* Extension */,
+				92012BB21FECF78C0001DDD2 /* AppDelegate.swift */,
+				92012BB41FECF78C0001DDD2 /* ViewController.swift */,
+				92012C0C1FECFCD40001DDD2 /* Login */,
 				92012BFC1FECFBD60001DDD2 /* Popup */,
 				92012C031FECFBDF0001DDD2 /* Toast */,
 				92012BB61FECF78C0001DDD2 /* Main.storyboard */,
@@ -192,6 +206,29 @@
 				92012C051FECFBDF0001DDD2 /* DemoToastView.xib */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		92012C0C1FECFCD40001DDD2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				92012C0D1FECFCD40001DDD2 /* LoginPopupCompletionView.swift */,
+				92012C0E1FECFCD40001DDD2 /* LoginPopupCompletionView.xib */,
+				92012C0F1FECFCD40001DDD2 /* LoginPopupLoadView.swift */,
+				92012C101FECFCD40001DDD2 /* LoginPopupLoadView.xib */,
+				92012C111FECFCD40001DDD2 /* LoginPopupSNSView.swift */,
+				92012C121FECFCD40001DDD2 /* LoginPopupSNSView.xib */,
+				92012C131FECFCD40001DDD2 /* LoginPopupViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		92012C1B1FECFDAB0001DDD2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				92012C0A1FECFBF00001DDD2 /* Nibable.swift */,
+				92012BF51FECFBAB0001DDD2 /* DemoPopupCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		B4B38E5800F3F52E9FB90378 /* Pods */ = {
@@ -315,7 +352,10 @@
 			files = (
 				92012BBD1FECF78C0001DDD2 /* LaunchScreen.storyboard in Resources */,
 				92012BBA1FECF78C0001DDD2 /* Assets.xcassets in Resources */,
+				92012C191FECFCD50001DDD2 /* LoginPopupSNSView.xib in Resources */,
 				92012C011FECFBD60001DDD2 /* DemoPopupView.xib in Resources */,
+				92012C171FECFCD50001DDD2 /* LoginPopupLoadView.xib in Resources */,
+				92012C151FECFCD50001DDD2 /* LoginPopupCompletionView.xib in Resources */,
 				92012C081FECFBDF0001DDD2 /* DemoToastView.xib in Resources */,
 				92012BB81FECF78C0001DDD2 /* Main.storyboard in Resources */,
 			);
@@ -397,9 +437,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				92012BB51FECF78C0001DDD2 /* ViewController.swift in Sources */,
+				92012C141FECFCD50001DDD2 /* LoginPopupCompletionView.swift in Sources */,
 				92012C071FECFBDF0001DDD2 /* DemoToastView.swift in Sources */,
+				92012C1A1FECFCD50001DDD2 /* LoginPopupViewController.swift in Sources */,
+				92012C161FECFCD50001DDD2 /* LoginPopupLoadView.swift in Sources */,
 				92012BFB1FECFBB70001DDD2 /* UIView+Shadow.swift in Sources */,
 				92012BF61FECFBAB0001DDD2 /* DemoPopupCell.swift in Sources */,
+				92012C181FECFCD50001DDD2 /* LoginPopupSNSView.swift in Sources */,
 				92012C091FECFBDF0001DDD2 /* ToastViewController.swift in Sources */,
 				92012BB31FECF78C0001DDD2 /* AppDelegate.swift in Sources */,
 				92012C001FECFBD60001DDD2 /* DemoPopupView.swift in Sources */,
