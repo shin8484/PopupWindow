@@ -40,7 +40,9 @@ class PopupViewController: UIViewController, PopupPresentable {
             
             view.closeButtonTapHandler = { [weak self] in
                 guard let me = self else { return }
-                me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: me.popupItem.direction) { _ in }
+                me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: me.popupItem.direction) { _ in
+                    PopupWindowManager.shared.changeKeyWindow(rootViewController: nil)
+                }
             }
         }
 

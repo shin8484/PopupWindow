@@ -8,10 +8,6 @@
 
 import UIKit
 
-public protocol PopupItemable {
-    var popupItem: PopupItem? { get set }
-}
-
 public struct PopupItem {
     public let view: UIView
     public let frame: CGRect
