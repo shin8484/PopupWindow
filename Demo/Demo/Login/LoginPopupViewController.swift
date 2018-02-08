@@ -27,6 +27,12 @@ class LoginPopupViewController: UIViewController, PopupPresentable {
                                          margin: 8,
                                          hasBlur: true)
 
+    override func loadView() {
+        super.loadView()
+        // PopupPresentable
+        setupPopupContainerView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,7 +59,6 @@ class LoginPopupViewController: UIViewController, PopupPresentable {
         super.viewDidAppear(animated)
 
         // PopupPresentable
-        setupPopupContainerView()
         makePopupView(with: popupItem)
         showPopupView(duration: Const.popupDuration, curve: .easeInOut, delayFactor: 0.0)
     }

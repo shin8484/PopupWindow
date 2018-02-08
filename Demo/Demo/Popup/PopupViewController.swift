@@ -28,6 +28,12 @@ class PopupViewController: UIViewController, PopupPresentable {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func loadView() {
+        super.loadView()
+        // PopupPresentable
+        setupPopupContainerView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -47,7 +53,6 @@ class PopupViewController: UIViewController, PopupPresentable {
         }
 
         // PopupPresentable
-        setupPopupContainerView()
         makePopupView(with: popupItem)
         showPopupView(duration: Const.popupDuration, curve: .easeInOut, delayFactor: 0.0)
 
