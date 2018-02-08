@@ -5,4 +5,4 @@
 language: objective-c
 osx_image: xcode9.2
 script:
-- xcodebuild -project TTrv.xcodeproj -scheme TTrv -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO
+- xcodebuild -project PopupWindow.xcodeproj -scheme PopupWindow -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO
