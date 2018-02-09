@@ -10,7 +10,7 @@ import UIKit
 
 open class BasePopupViewController: UIViewController {
 
-    private var item: PopupItem
+    private var item: PopupItem?
 
     private var safeAreaInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
@@ -24,15 +24,6 @@ open class BasePopupViewController: UIViewController {
         return UIScreen.main.bounds
     }
 
-    public init(popupItem: PopupItem) {
-        self.item = popupItem
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override open func loadView() {
         super.loadView()
         setupPopupContainerView()
@@ -40,8 +31,13 @@ open class BasePopupViewController: UIViewController {
 
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        guard let item = item else { return }
         makePopupView(with: item)
         showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
+    }
+
+    public func configurePopupItem(_ popupItem: PopupItem) {
+        item = popupItem
     }
 
     public func setupPopupContainerView() {
@@ -67,12 +63,13 @@ open class BasePopupViewController: UIViewController {
     }
 
     public func replacePopupView(with popupItem: PopupItem) {
-        self.item.view.removeFromSuperview()
+        guard let item = item else { return }
+        item.view.removeFromSuperview()
         popupItem.view.frame = addFrame(with: popupItem)
         (popupItem.view as? PopupViewContainable)?.containerView.alpha = 0.0
         view.addSubview(popupItem.view)
 
-        item = popupItem
+        self.item = popupItem
         addBlur(with: popupItem)
         convertShape(with: popupItem)
 
@@ -86,26 +83,26 @@ open class BasePopupViewController: UIViewController {
     public func showPopupView(duration: TimeInterval, curve: UIViewAnimationCurve, delayFactor: CGFloat) {
         let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
         animator.addAnimations({ [weak self] in
-            guard let me = self else { return }
-            me.item.view.frame = me.addFrame(with: me.item)
-            }, delayFactor: delayFactor)
+            guard let me = self, let item = me.item else { return }
+            item.view.frame = me.addFrame(with: item)
+        }, delayFactor: delayFactor)
         animator.startAnimation()
 
         let backgroundAnimator = UIViewPropertyAnimator(duration: duration, curve: curve)
         backgroundAnimator.addAnimations({ [weak self] in
-            guard let me = self else { return }
-            me.addBlur(with: me.item)
-            }, delayFactor: delayFactor)
+            guard let me = self, let item = me.item else { return }
+            me.addBlur(with: item)
+        }, delayFactor: delayFactor)
         backgroundAnimator.startAnimation()
     }
 
     public func transformPopupView(duration: TimeInterval, curve: UIViewAnimationCurve, popupItem: PopupItem, completion: @escaping ((UIViewAnimatingPosition) -> Void)) {
         let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
         animator.addAnimations() { [weak self] in
-            guard let me = self else { return }
+            guard let me = self, let item = me.item else { return }
             me.addBlur(with: popupItem)
-            me.item.view.frame = me.addFrame(with: popupItem)
-            (me.item.view as? PopupViewContainable)?.containerView.alpha = 0
+            item.view.frame = me.addFrame(with: popupItem)
+            (item.view as? PopupViewContainable)?.containerView.alpha = 0
         }
         animator.addCompletion() { position in
             completion(position)
@@ -116,11 +113,11 @@ open class BasePopupViewController: UIViewController {
     public func dismissPopupView(duration: TimeInterval, curve: UIViewAnimationCurve, delayFactor: CGFloat = 0.0, direction: PopupViewDirection, completion: @escaping ((UIViewAnimatingPosition) -> Void)) {
         let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
         animator.addAnimations({ [weak self] in
-            guard let me = self else { return }
+            guard let me = self, let item = me.item else { return }
             me.view.backgroundColor = .clear
             switch direction {
-            case .top: me.item.view.frame.origin.y = -me.item.view.frame.height
-            case .bottom: me.item.view.frame.origin.y = me.view.bounds.height
+            case .top: item.view.frame.origin.y = -item.view.frame.height
+            case .bottom: item.view.frame.origin.y = me.view.bounds.height
             }
         }, delayFactor: delayFactor)
         
