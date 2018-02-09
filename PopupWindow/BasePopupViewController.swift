@@ -11,6 +11,7 @@ import UIKit
 open class BasePopupViewController: UIViewController {
 
     private var item: PopupItem?
+    private var isShowedPopupView: Bool = false
 
     private var safeAreaInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
@@ -32,8 +33,11 @@ open class BasePopupViewController: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let item = item else { return }
-        makePopupView(with: item)
-        showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
+        if !isShowedPopupView {
+            makePopupView(with: item)
+            showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
+            isShowedPopupView = true
+        }
     }
 
     public func configurePopupItem(_ popupItem: PopupItem) {
