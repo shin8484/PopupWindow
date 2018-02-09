@@ -46,7 +46,7 @@ PopupWindowManager.shared.changeKeyWindow(rootViewController: UIViewController()
 
 ### Create and show show
 
-Create a PopupItem in the VC where you want to display the popup and call the method of the `PopupPresentable` protocol
+Create a PopupItem in the ViewController where you want to display the popup and call the method of BasePopupViewController
 
 ```Swift
 var popupItem: PopupItem = PopupItem(view: LoginView.view(),
@@ -54,12 +54,25 @@ var popupItem: PopupItem = PopupItem(view: LoginView.view(),
                                      type: .rounded(cornerSize: 4),
                                      direction: .top,
                                      margin: 8,
-                                     hasBlur: true)
+                                     hasBlur: true,
+				     duration: 0.3)
+```
+First popup implementation is included in BasePopupViewController's `loadView`, `viewDidAppear`.
+If you want to create the next popup, please call `showPopupView()`.
 
-// Methods in PopupPresentable
-setupPopupContainerView()
-makePopupView(with: popupItem)
-showPopupView(duration: Const.popupDuration, curve: .easeInOut, delayFactor: 0.0)
+```Swift
+class SampleViewController: BasePopupViewController {
+    override open func loadView() {
+        super.loadView()
+        setupPopupContainerView()
+    }
+
+    override open func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        makePopupView(with: item)
+        showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
+    }
+}
 ```
 
 ### Transform & Replace
@@ -84,7 +97,7 @@ dismissPopupView(duration: 3.3, curve: .easeInOut, delayFactor: 0.9, direction: 
 ```
 
 ### PopupItem
-PopupItem is struct to set up a popup, View, size, direction, whether it is rounded, margin, blurred or not
+PopupItem is struct to set up a popup, View, size, direction, whether it is rounded, margin, blurred or not, duration
 ```Swift
 struct PopupItem {
     public let view: UIView
@@ -93,6 +106,7 @@ struct PopupItem {
     public let direction: PopupViewDirection
     public let margin: CGFloat
     public let hasBlur: Bool
+    public let duration: TimeInterval
 }
 ```
 
@@ -104,4 +118,3 @@ struct PopupItem {
 ## LICENSE
 
 Under the MIT license. See LICENSE file for details.
-

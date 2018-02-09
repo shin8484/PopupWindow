@@ -10,7 +10,7 @@ import UIKit
 import PopupWindow
 
 class ToastViewController: BasePopupViewController {
-    
+
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4

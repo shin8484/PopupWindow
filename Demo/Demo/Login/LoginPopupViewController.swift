@@ -54,7 +54,13 @@ class LoginPopupViewController: BasePopupViewController {
     }
 
     private func showCompletionView() {
-        let popupItem = PopupItem(view: LoginPopupCompletionView.view(), frame: Const.completionFrame, type: .rounded(cornerSize: 8), direction: .bottom, margin: 8, hasBlur: false, duration: Const.popupDuration)
+        let popupItem = PopupItem(view: LoginPopupCompletionView.view(),
+                                  frame: Const.completionFrame,
+                                  type: .rounded(cornerSize: 8),
+                                  direction: .bottom, margin: 8,
+                                  hasBlur: false,
+                                  duration: Const.popupDuration)
+        
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }
             me.replacePopupView(with: popupItem)
