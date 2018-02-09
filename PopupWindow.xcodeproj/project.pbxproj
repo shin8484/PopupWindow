@@ -14,12 +14,12 @@
 		92012BEC1FECF97D0001DDD2 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */; };
 		92012BED1FECF97D0001DDD2 /* CGRect+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE31FECF97D0001DDD2 /* CGRect+Inset.swift */; };
 		92012BEE1FECF97D0001DDD2 /* UIView+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE41FECF97D0001DDD2 /* UIView+Shape.swift */; };
-		92012BEF1FECF97D0001DDD2 /* PopupViewCotainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE51FECF97D0001DDD2 /* PopupViewCotainable.swift */; };
+		92012BEF1FECF97D0001DDD2 /* PopupViewContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE51FECF97D0001DDD2 /* PopupViewContainable.swift */; };
 		92012BF01FECF97D0001DDD2 /* PopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE61FECF97D0001DDD2 /* PopupItem.swift */; };
 		92012BF11FECF97D0001DDD2 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */; };
-		92012BF21FECF97D0001DDD2 /* PopupPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE81FECF97D0001DDD2 /* PopupPresentable.swift */; };
 		92012BF31FECF97D0001DDD2 /* PopupViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */; };
 		92012BF41FECF97D0001DDD2 /* PopupViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */; };
+		92E399AB202C5A3300DB26C4 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E399AA202C5A3300DB26C4 /* BasePopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +43,12 @@
 		92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowManager.swift; sourceTree = "<group>"; };
 		92012BE31FECF97D0001DDD2 /* CGRect+Inset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Inset.swift"; sourceTree = "<group>"; };
 		92012BE41FECF97D0001DDD2 /* UIView+Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shape.swift"; sourceTree = "<group>"; };
-		92012BE51FECF97D0001DDD2 /* PopupViewCotainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewCotainable.swift; sourceTree = "<group>"; };
+		92012BE51FECF97D0001DDD2 /* PopupViewContainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewContainable.swift; sourceTree = "<group>"; };
 		92012BE61FECF97D0001DDD2 /* PopupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupItem.swift; sourceTree = "<group>"; };
 		92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainerView.swift; sourceTree = "<group>"; };
-		92012BE81FECF97D0001DDD2 /* PopupPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupPresentable.swift; sourceTree = "<group>"; };
 		92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewDirection.swift; sourceTree = "<group>"; };
 		92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewType.swift; sourceTree = "<group>"; };
+		92E399AA202C5A3300DB26C4 /* BasePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +95,11 @@
 				92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */,
 				92012BE01FECF97D0001DDD2 /* PopupContainerWindow.swift */,
 				92012BE61FECF97D0001DDD2 /* PopupItem.swift */,
-				92012BE81FECF97D0001DDD2 /* PopupPresentable.swift */,
-				92012BE51FECF97D0001DDD2 /* PopupViewCotainable.swift */,
+				92012BE51FECF97D0001DDD2 /* PopupViewContainable.swift */,
 				92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */,
 				92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */,
 				92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */,
+				92E399AA202C5A3300DB26C4 /* BasePopupViewController.swift */,
 				92012B8F1FECF7680001DDD2 /* PopupWindow.h */,
 				92012B901FECF7680001DDD2 /* Info.plist */,
 			);
@@ -239,12 +239,12 @@
 				92012BF41FECF97D0001DDD2 /* PopupViewType.swift in Sources */,
 				92012BED1FECF97D0001DDD2 /* CGRect+Inset.swift in Sources */,
 				92012BF31FECF97D0001DDD2 /* PopupViewDirection.swift in Sources */,
-				92012BF21FECF97D0001DDD2 /* PopupPresentable.swift in Sources */,
 				92012BEE1FECF97D0001DDD2 /* UIView+Shape.swift in Sources */,
 				92012BF01FECF97D0001DDD2 /* PopupItem.swift in Sources */,
-				92012BEF1FECF97D0001DDD2 /* PopupViewCotainable.swift in Sources */,
+				92012BEF1FECF97D0001DDD2 /* PopupViewContainable.swift in Sources */,
 				92012BEB1FECF97D0001DDD2 /* PopupContainerWindow.swift in Sources */,
 				92012BF11FECF97D0001DDD2 /* PopupContainerView.swift in Sources */,
+				92E399AB202C5A3300DB26C4 /* BasePopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,15 @@ public struct PopupItem {
     public let direction: PopupViewDirection
     public let margin: CGFloat
     public let hasBlur: Bool
+    public let duration: TimeInterval
 
-    public init(view: UIView, frame: CGRect, type: PopupViewType, direction: PopupViewDirection, margin: CGFloat, hasBlur: Bool) {
+    public init(view: UIView, frame: CGRect, type: PopupViewType, direction: PopupViewDirection, margin: CGFloat, hasBlur: Bool, duration: TimeInterval) {
         self.view = view
         self.frame = frame
         self.type = type
         self.direction = direction
         self.margin = margin
         self.hasBlur = hasBlur
+        self.duration = duration
     }
 }

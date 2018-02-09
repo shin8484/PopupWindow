@@ -18,7 +18,7 @@ public class PopupWindowManager {
     public func changeKeyWindow(rootViewController: UIViewController?) {
         if let rootViewController = rootViewController {
             popupContainerWindow = PopupContainerWindow()
-            guard let popupContainerWindow = popupContainerWindow, rootViewController is PopupPresentable else { return }
+            guard let popupContainerWindow = popupContainerWindow, rootViewController is BasePopupViewController else { return }
             popupContainerWindow.frame = UIScreen.main.bounds
             popupContainerWindow.backgroundColor = .clear
             popupContainerWindow.windowLevel = UIWindowLevelStatusBar + 1
