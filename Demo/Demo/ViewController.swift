@@ -10,12 +10,6 @@ import UIKit
 import PopupWindow
 
 class ViewController: UIViewController {
-
-    enum Const {
-        static let popupDuration: TimeInterval = 0.3
-        static let firstViewFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: LoginPopupSNSView.Const.height)
-    }
-
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -76,31 +70,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.row == 0 {
-            let popupItem = PopupItem(view: DemoToastView.view(), frame: ToastViewController.Const.toastViewFrame, type: .normal, direction: .top, margin: 0, hasBlur: false, duration: Const.popupDuration)
-            PopupWindowManager.shared.changeKeyWindow(rootViewController:  ToastViewController(popupItem: popupItem))
+            let rootViewController = ToastViewController()
+            rootViewController.isTop = true
+            PopupWindowManager.shared.changeKeyWindow(rootViewController:  rootViewController)
 
         } else if indexPath.row == 1 {
-            let popupItem = PopupItem(view: DemoToastView.view(), frame: ToastViewController.Const.toastViewFrame, type: .normal, direction: .bottom, margin: 0, hasBlur: false, duration: Const.popupDuration)
-            PopupWindowManager.shared.changeKeyWindow(rootViewController:  ToastViewController(popupItem: popupItem))
-
+            let rootViewController = ToastViewController()
+            rootViewController.isTop = false
+            PopupWindowManager.shared.changeKeyWindow(rootViewController:  rootViewController)
+            
         } else if indexPath.row == 2 {
-            let popupItem = PopupItem(view: DemoPopupView.view(), frame: PopupViewController.Const.popupViewFrame, type: .rounded(cornerSize: 10), direction: .top, margin: 16, hasBlur: true, duration: Const.popupDuration)
-            PopupWindowManager.shared.changeKeyWindow(rootViewController:  PopupViewController(popupItem: popupItem))
+            let rootViewController = PopupViewController()
+            rootViewController.isTop = true
+            PopupWindowManager.shared.changeKeyWindow(rootViewController: rootViewController)
 
         } else if indexPath.row == 3 {
-            let popupItem = PopupItem(view: DemoPopupView.view(), frame: PopupViewController.Const.popupViewFrame, type: .rounded(cornerSize: 10), direction: .bottom, margin: 16, hasBlur: true, duration: Const.popupDuration)
-            PopupWindowManager.shared.changeKeyWindow(rootViewController:  PopupViewController(popupItem: popupItem))
+            let rootViewController = PopupViewController()
+            rootViewController.isTop = false
+            PopupWindowManager.shared.changeKeyWindow(rootViewController: rootViewController)
 
         } else if indexPath.row == 4 {
-            let popupItem: PopupItem = PopupItem(view: LoginPopupSNSView.view(),
-                                                 frame: Const.firstViewFrame,
-                                                 type: .rounded(cornerSize: 8),
-                                                 direction: .bottom,
-                                                 margin: 8,
-                                                 hasBlur: true,
-                                                 duration: Const.popupDuration)
-
-            PopupWindowManager.shared.changeKeyWindow(rootViewController: LoginPopupViewController(popupItem: popupItem))
+            PopupWindowManager.shared.changeKeyWindow(rootViewController: LoginPopupViewController())
         }
     }
 }

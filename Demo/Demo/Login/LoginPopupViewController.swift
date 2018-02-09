@@ -20,19 +20,18 @@ class LoginPopupViewController: BasePopupViewController {
         static let completionFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: LoginPopupCompletionView.Const.height)
     }
 
-    private var popupItem: PopupItem
+    private let popupItem = PopupItem(view: LoginPopupSNSView.view(),
+                                      frame: Const.firstViewFrame,
+                                      type: .rounded(cornerSize: 8),
+                                      direction: .bottom,
+                                      margin: 8,
+                                      hasBlur: true,
+                                      duration: Const.popupDuration)
 
-    override init(popupItem: PopupItem) {
-        self.popupItem = popupItem
-        super.init(popupItem: popupItem)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        configurePopupItem(popupItem)
 
         if let view = popupItem.view as? LoginPopupSNSView {
             view.closeButtonTapHandler = { [weak self] in

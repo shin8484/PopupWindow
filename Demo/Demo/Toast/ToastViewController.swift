@@ -17,31 +17,44 @@ class ToastViewController: BasePopupViewController {
         static let toastViewFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: DemoToastView.Const.height)
     }
 
-    private var popupItem: PopupItem
+    var isTop: Bool = true
+    private var popupItem: PopupItem?
 
-    override init(popupItem: PopupItem) {
-        self.popupItem = popupItem
-        super.init(popupItem: popupItem)
-    }
+    private let topPopupItem = PopupItem(view: DemoToastView.view(),
+                                         frame: ToastViewController.Const.toastViewFrame,
+                                         type: .normal,
+                                         direction: .top,
+                                         margin: 0, hasBlur: false,
+                                         duration: Const.popupDuration)
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private let bottomPopupItem = PopupItem(view: DemoToastView.view(),
+                                            frame: ToastViewController.Const.toastViewFrame,
+                                            type: .normal,
+                                            direction: .bottom,
+                                            margin: 0, hasBlur: false,
+                                            duration: Const.popupDuration)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isTop {
+            popupItem = topPopupItem
+            configurePopupItem(popupItem!)
+        } else {
+            popupItem = bottomPopupItem
+            configurePopupItem(popupItem!)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let view = popupItem.view as? DemoToastView {
+        if let popupItem = popupItem, let view = popupItem.view as? DemoToastView {
             view.configureDemoToastView(popupItem: popupItem)
         }
 
         DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 3.0 ) { [weak self] in
-            guard let me = self else { return }
-            me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: me.popupItem.direction) { _ in
+            guard let me = self, let popupItem = me.popupItem else { return }
+            me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: popupItem.direction) { _ in
                 PopupWindowManager.shared.changeKeyWindow(rootViewController: nil)
             }
         }
