@@ -9,7 +9,7 @@
 import UIKit
 import PopupWindow
 
-class DemoToastView: UIView, PopupViewCotainable, Nibable {
+class DemoToastView: UIView, PopupViewContainable, Nibable {
     enum Const {
         static let height: CGFloat = 80
     }

@@ -9,7 +9,7 @@
 import UIKit
 import PopupWindow
 
-class LoginPopupViewController: UIViewController, PopupPresentable {
+class LoginPopupViewController: BasePopupViewController {
 
     enum Const {
         static let popupDuration: TimeInterval = 0.3
@@ -20,19 +20,17 @@ class LoginPopupViewController: UIViewController, PopupPresentable {
         static let completionFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: LoginPopupCompletionView.Const.height)
     }
 
-    var popupItem: PopupItem = PopupItem(view: LoginPopupSNSView.view(),
-                                         frame: Const.firstViewFrame,
-                                         type: .rounded(cornerSize: 8),
-                                         direction: .bottom,
-                                         margin: 8,
-                                         hasBlur: true)
+    private var popupItem: PopupItem
 
-    override func loadView() {
-        super.loadView()
-        // PopupPresentable
-        setupPopupContainerView()
+    override init(popupItem: PopupItem) {
+        self.popupItem = popupItem
+        super.init(popupItem: popupItem)
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,7 +41,7 @@ class LoginPopupViewController: UIViewController, PopupPresentable {
 
             view.snsButtonTapHandler = { [weak self] in
                 guard let me = self else { return }
-                let popupItem = PopupItem(view: LoginPopupLoadView.view(), frame: Const.loadingFrame, type: .rounded(cornerSize: 8), direction: .bottom, margin: 8, hasBlur: true)
+                let popupItem = PopupItem(view: LoginPopupLoadView.view(), frame: Const.loadingFrame, type: .rounded(cornerSize: 8), direction: .bottom, margin: 8, hasBlur: true, duration: Const.popupDuration)
                 me.transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
                     guard let me = self else { return }
                     me.replacePopupView(with: popupItem)
@@ -55,16 +53,8 @@ class LoginPopupViewController: UIViewController, PopupPresentable {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        // PopupPresentable
-        makePopupView(with: popupItem)
-        showPopupView(duration: Const.popupDuration, curve: .easeInOut, delayFactor: 0.0)
-    }
-
     private func showCompletionView() {
-        let popupItem = PopupItem(view: LoginPopupCompletionView.view(), frame: Const.completionFrame, type: .rounded(cornerSize: 8), direction: .bottom, margin: 8, hasBlur: false)
+        let popupItem = PopupItem(view: LoginPopupCompletionView.view(), frame: Const.completionFrame, type: .rounded(cornerSize: 8), direction: .bottom, margin: 8, hasBlur: false, duration: Const.popupDuration)
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }
             me.replacePopupView(with: popupItem)

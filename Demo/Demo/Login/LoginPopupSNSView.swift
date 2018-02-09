@@ -9,7 +9,7 @@
 import UIKit
 import PopupWindow
 
-class LoginPopupSNSView: UIView, PopupViewCotainable, Nibable {
+class LoginPopupSNSView: UIView, PopupViewContainable, Nibable {
     enum Const {
         static let height: CGFloat = 250
         static let buttonInset: CGFloat = 20

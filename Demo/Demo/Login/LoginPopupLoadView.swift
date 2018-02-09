@@ -9,7 +9,7 @@
 import UIKit
 import PopupWindow
 
-class LoginPopupLoadView: UIView, PopupViewCotainable, Nibable {
+class LoginPopupLoadView: UIView, PopupViewContainable, Nibable {
     enum Const {
         static let height: CGFloat = 150
     }
