@@ -9,7 +9,7 @@
 import UIKit
 import PopupWindow
 
-class PopupViewController: UIViewController, PopupPresentable {
+class PopupViewController: BasePopupViewController {
 
     enum Const {
         static let popupDuration: TimeInterval = 0.3
@@ -17,25 +17,15 @@ class PopupViewController: UIViewController, PopupPresentable {
         static let popupViewFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: DemoPopupView.Const.height)
     }
 
-    var popupItem: PopupItem
-    
-    init(popupItem: PopupItem) {
+    private var popupItem: PopupItem
+
+    override init(popupItem: PopupItem) {
         self.popupItem = popupItem
-        super.init(nibName: nil, bundle: nil)
+        super.init(popupItem: popupItem)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func loadView() {
-        super.loadView()
-        // PopupPresentable
-        setupPopupContainerView()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -52,13 +42,11 @@ class PopupViewController: UIViewController, PopupPresentable {
             }
         }
 
-        // PopupPresentable
-        makePopupView(with: popupItem)
-        showPopupView(duration: Const.popupDuration, curve: .easeInOut, delayFactor: 0.0)
-
         DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 3.0 ) { [weak self] in
             guard let me = self else { return }
             me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: me.popupItem.direction) { _ in }
         }
     }
 }
+
+

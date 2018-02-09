@@ -83,6 +83,7 @@
 		92012C111FECFCD40001DDD2 /* LoginPopupSNSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupSNSView.swift; sourceTree = "<group>"; };
 		92012C121FECFCD40001DDD2 /* LoginPopupSNSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPopupSNSView.xib; sourceTree = "<group>"; };
 		92012C131FECFCD40001DDD2 /* LoginPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupViewController.swift; sourceTree = "<group>"; };
+		92E399AD202C5C2000DB26C4 /* PopupWindow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PopupWindow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E632FE01ABF27D45343426A6 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0498A09B261C3611840301 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +117,7 @@
 		28F43D2FCB30C16F005CE10D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92E399AD202C5C2000DB26C4 /* PopupWindow.framework */,
 				E632FE01ABF27D45343426A6 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;

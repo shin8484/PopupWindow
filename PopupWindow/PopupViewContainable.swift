@@ -1,5 +1,5 @@
 //
-//  PopupViewCotainable.swift
+//  PopupViewContainable.swift
 //  PopupWindow
 //
 //  Created by Shinji Hayashi on 2017/12/22.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-public protocol PopupViewCotainable {
+public protocol PopupViewContainable {
     weak var containerView: UIView! { get }
 }
