@@ -14,24 +14,25 @@ class PopupViewController: BasePopupViewController {
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
-        static let popupViewFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: DemoPopupView.Const.height)
     }
 
     var isTop: Bool = true
     private var popupItem: PopupItem?
 
     private let topPopupItem = PopupItem(view: DemoPopupView.view(),
-                                         frame: PopupViewController.Const.popupViewFrame,
-                                         type: .normal,
+                                         height: DemoPopupView.Const.height,
+                                         type:.rounded(cornerSize: 8),
                                          direction: .top,
-                                         margin: 0, hasBlur: false,
+                                         margin: 8,
+                                         hasBlur: true,
                                          duration: Const.popupDuration)
 
     private let bottomPopupItem = PopupItem(view: DemoPopupView.view(),
-                                            frame: PopupViewController.Const.popupViewFrame,
-                                            type: .normal,
+                                            height: DemoPopupView.Const.height,
+                                            type:.rounded(cornerSize: 8),
                                             direction: .bottom,
-                                            margin: 0, hasBlur: false,
+                                            margin: 8,
+                                            hasBlur: true,
                                             duration: Const.popupDuration)
 
     override func viewDidLoad() {
