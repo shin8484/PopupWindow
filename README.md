@@ -50,7 +50,7 @@ Create a PopupItem in the ViewController where you want to display the popup and
 
 ```Swift
 var popupItem: PopupItem = PopupItem(view: LoginView.view(),
-                                     frame: Const.firstViewFrame,
+                                     height: Const.firstViewFrame.height,
                                      type: .rounded(cornerSize: 4),
                                      direction: .top,
                                      margin: 8,
@@ -101,7 +101,7 @@ PopupItem is struct to set up a popup, View, size, direction, whether it is roun
 ```Swift
 struct PopupItem {
     public let view: UIView
-    public let frame: CGRect
+    public let height: CGFloat
     public let type: PopupViewType
     public let direction: PopupViewDirection
     public let margin: CGFloat
