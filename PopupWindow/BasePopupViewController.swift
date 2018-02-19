@@ -21,48 +21,43 @@ open class BasePopupViewController: UIViewController {
         }
     }
 
-    private var screen: CGRect {
-        return UIScreen.main.bounds
-    }
-
     override open func loadView() {
         super.loadView()
-        setupPopupContainerView()
+        configurePopupContainerView()
     }
 
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let item = item else { return }
-        if !isShowedPopupView {
-            makePopupView(with: item)
-            showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
-            isShowedPopupView = true
-        }
+        if isShowedPopupView { return }
+        isShowedPopupView = true
+
+        makePopupView(with: item)
+        showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
     }
 
-    public func configurePopupItem(_ popupItem: PopupItem) {
-        item = popupItem
-    }
-
-    public func setupPopupContainerView() {
+    private func configurePopupContainerView() {
         view = PopupContainerView()
         view.backgroundColor = .clear
+    }
+    public func configurePopupItem(_ popupItem: PopupItem) {
+        if isShowedPopupView { return }
+        item = popupItem
     }
 
     public func makePopupView(with popupItem: PopupItem) {
         let frame: CGRect
         switch popupItem.direction {
         case .top:
-            frame = CGRect(x: popupItem.frame.origin.x + popupItem.margin, y: -popupItem.frame.height, width: popupItem.frame.width - popupItem.margin * 2, height: popupItem.frame.height)
+            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: -popupItem.height, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
             popupItem.view.frame = frame.addTopInset(safeAreaInsets)
         case .bottom:
-            frame = CGRect(x: popupItem.frame.origin.x + popupItem.margin, y: screen.height, width: popupItem.frame.width - popupItem.margin * 2, height: popupItem.frame.height)
+            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: view.frame.height, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
             popupItem.view.frame = frame.addBottomInset(safeAreaInsets)
         }
 
         item = popupItem
         convertShape(with: popupItem)
-
         view.addSubview(popupItem.view)
     }
 
@@ -136,11 +131,11 @@ open class BasePopupViewController: UIViewController {
         let frame: CGRect
         switch popupItem.direction {
         case .top:
-            frame = CGRect(x: popupItem.frame.origin.x + popupItem.margin, y: popupItem.margin + popupItem.frame.origin.y, width: popupItem.frame.width - popupItem.margin * 2, height: popupItem.frame.height)
+            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: popupItem.margin + view.frame.origin.y, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
             return frame.addTopInset(safeAreaInsets)
 
         case .bottom:
-            frame = CGRect(x: popupItem.frame.origin.x + popupItem.margin, y: screen.height - popupItem.frame.height - popupItem.margin, width: popupItem.frame.width - popupItem.margin * 2, height: popupItem.frame.height)
+            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: view.frame.height - popupItem.height - popupItem.margin, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
             return frame.addBottomInset(safeAreaInsets)
         }
     }

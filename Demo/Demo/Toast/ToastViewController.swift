@@ -14,24 +14,25 @@ class ToastViewController: BasePopupViewController {
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
-        static let toastViewFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: DemoToastView.Const.height)
     }
 
     var isTop: Bool = true
     private var popupItem: PopupItem?
 
     private let topPopupItem = PopupItem(view: DemoToastView.view(),
-                                         frame: ToastViewController.Const.toastViewFrame,
+                                         height: DemoToastView.Const.height,
                                          type: .normal,
                                          direction: .top,
-                                         margin: 0, hasBlur: false,
+                                         margin: 0,
+                                         hasBlur: false,
                                          duration: Const.popupDuration)
 
     private let bottomPopupItem = PopupItem(view: DemoToastView.view(),
-                                            frame: ToastViewController.Const.toastViewFrame,
+                                            height: DemoToastView.Const.height,
                                             type: .normal,
                                             direction: .bottom,
-                                            margin: 0, hasBlur: false,
+                                            margin: 0,
+                                            hasBlur: false,
                                             duration: Const.popupDuration)
 
     override func viewDidLoad() {

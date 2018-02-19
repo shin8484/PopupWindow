@@ -22,8 +22,6 @@ class DemoToastView: UIView, PopupViewContainable, Nibable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
-    var closeButtonTapHandler: (() -> Void)?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .black

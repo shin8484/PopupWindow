@@ -10,16 +10,16 @@ import UIKit
 
 public struct PopupItem {
     public let view: UIView
-    public let frame: CGRect
+    public let height: CGFloat
     public let type: PopupViewType
     public let direction: PopupViewDirection
     public let margin: CGFloat
     public let hasBlur: Bool
     public let duration: TimeInterval
 
-    public init(view: UIView, frame: CGRect, type: PopupViewType, direction: PopupViewDirection, margin: CGFloat, hasBlur: Bool, duration: TimeInterval) {
+    public init(view: UIView, height: CGFloat, type: PopupViewType, direction: PopupViewDirection, margin: CGFloat, hasBlur: Bool, duration: TimeInterval) {
         self.view = view
-        self.frame = frame
+        self.height = height
         self.type = type
         self.direction = direction
         self.margin = margin
