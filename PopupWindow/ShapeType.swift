@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum PopupViewType {
+public enum ShapeType {
     //Corner square
     case normal
 
@@ -19,4 +19,9 @@ public enum PopupViewType {
 
     //Corner rounded only bottom
     case roundedCornerBottom(cornerSize: CGFloat)
+}
+
+public enum ViewType {
+    case toast
+    case card
 }
