@@ -21,7 +21,9 @@ class ToastViewController: BasePopupViewController {
 
     private let topPopupItem = PopupItem(view: DemoToastView.view(),
                                          height: DemoToastView.Const.height,
-                                         type: .normal,
+                                         maxWidth: 500,
+                                         shapeType: .normal,
+                                         viewType: .toast,
                                          direction: .top,
                                          margin: 0,
                                          hasBlur: false,
@@ -29,7 +31,9 @@ class ToastViewController: BasePopupViewController {
 
     private let bottomPopupItem = PopupItem(view: DemoToastView.view(),
                                             height: DemoToastView.Const.height,
-                                            type: .normal,
+                                            maxWidth: 500,
+                                            shapeType: .normal,
+                                            viewType: .toast,
                                             direction: .bottom,
                                             margin: 0,
                                             hasBlur: false,

@@ -47,10 +47,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="clI-jz-P8m" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="DHH-8i-aN4"/>
                 <constraint firstItem="clI-jz-P8m" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="I4o-PK-1ob"/>
                 <constraint firstItem="clI-jz-P8m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cON-NV-5rt"/>
                 <constraint firstItem="clI-jz-P8m" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dGC-L6-hqy"/>
-                <constraint firstItem="clI-jz-P8m" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tcF-qr-tdz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
