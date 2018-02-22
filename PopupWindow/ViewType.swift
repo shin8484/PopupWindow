@@ -6,4 +6,9 @@
 //  Copyright © 2018年 shin884. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public enum ViewType {
+    case toast
+    case card
+}

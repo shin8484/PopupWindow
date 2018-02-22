@@ -20,8 +20,3 @@ public enum ShapeType {
     //Corner rounded only bottom
     case roundedCornerBottom(cornerSize: CGFloat)
 }
-
-public enum ViewType {
-    case toast
-    case card
-}

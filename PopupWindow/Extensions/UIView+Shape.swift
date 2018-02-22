@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    func convertShape(shape: PopupViewType, clips: Bool = false) {
+    func convertShape(shape: ShapeType, clips: Bool = false) {
         switch shape {
         case .normal:  break
 
