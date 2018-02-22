@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,11 +45,22 @@ Logging in</string>
                         <constraint firstItem="68e-rn-Xb6" firstAttribute="centerX" secondItem="ldi-83-aAa" secondAttribute="centerX" id="lcp-Y1-XvR"/>
                     </constraints>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkj-zH-7Tx">
+                    <rect key="frame" x="0.0" y="115" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="8vB-9X-Y9C"/>
+                        <constraint firstAttribute="height" constant="1" id="BIM-nl-P36"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Vkj-zH-7Tx" secondAttribute="trailing" id="84l-nx-CCy"/>
+                <constraint firstItem="Vkj-zH-7Tx" firstAttribute="leading" secondItem="d9v-B9-HdY" secondAttribute="leading" id="IQk-sr-ZD8"/>
                 <constraint firstItem="ldi-83-aAa" firstAttribute="leading" secondItem="9QX-yZ-4cX" secondAttribute="leading" id="KBn-eI-27y"/>
                 <constraint firstItem="9QX-yZ-4cX" firstAttribute="trailing" secondItem="ldi-83-aAa" secondAttribute="trailing" id="Kce-G2-XNd"/>
+                <constraint firstAttribute="bottom" secondItem="Vkj-zH-7Tx" secondAttribute="bottom" constant="34" id="T5U-h6-1Ta"/>
                 <constraint firstItem="ldi-83-aAa" firstAttribute="top" secondItem="9QX-yZ-4cX" secondAttribute="top" id="sRI-eI-ymq"/>
                 <constraint firstItem="9QX-yZ-4cX" firstAttribute="bottom" secondItem="ldi-83-aAa" secondAttribute="bottom" id="yg0-Qc-467"/>
             </constraints>

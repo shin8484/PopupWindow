@@ -18,7 +18,8 @@
 		92012BF01FECF97D0001DDD2 /* PopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE61FECF97D0001DDD2 /* PopupItem.swift */; };
 		92012BF11FECF97D0001DDD2 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */; };
 		92012BF31FECF97D0001DDD2 /* PopupViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */; };
-		92012BF41FECF97D0001DDD2 /* PopupViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */; };
+		92012BF41FECF97D0001DDD2 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012BEA1FECF97D0001DDD2 /* ShapeType.swift */; };
+		929BC71F203EACD9006CE745 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC71E203EACD9006CE745 /* ViewType.swift */; };
 		92E399AB202C5A3300DB26C4 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E399AA202C5A3300DB26C4 /* BasePopupViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +48,8 @@
 		92012BE61FECF97D0001DDD2 /* PopupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupItem.swift; sourceTree = "<group>"; };
 		92012BE71FECF97D0001DDD2 /* PopupContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainerView.swift; sourceTree = "<group>"; };
 		92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewDirection.swift; sourceTree = "<group>"; };
-		92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewType.swift; sourceTree = "<group>"; };
+		92012BEA1FECF97D0001DDD2 /* ShapeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		929BC71E203EACD9006CE745 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		92E399AA202C5A3300DB26C4 /* BasePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +99,8 @@
 				92012BE61FECF97D0001DDD2 /* PopupItem.swift */,
 				92012BE51FECF97D0001DDD2 /* PopupViewContainable.swift */,
 				92012BE91FECF97D0001DDD2 /* PopupViewDirection.swift */,
-				92012BEA1FECF97D0001DDD2 /* PopupViewType.swift */,
+				92012BEA1FECF97D0001DDD2 /* ShapeType.swift */,
+				929BC71E203EACD9006CE745 /* ViewType.swift */,
 				92012BE11FECF97D0001DDD2 /* PopupWindowManager.swift */,
 				92E399AA202C5A3300DB26C4 /* BasePopupViewController.swift */,
 				92012B8F1FECF7680001DDD2 /* PopupWindow.h */,
@@ -236,10 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92012BEC1FECF97D0001DDD2 /* PopupWindowManager.swift in Sources */,
-				92012BF41FECF97D0001DDD2 /* PopupViewType.swift in Sources */,
+				92012BF41FECF97D0001DDD2 /* ShapeType.swift in Sources */,
 				92012BED1FECF97D0001DDD2 /* CGRect+Inset.swift in Sources */,
 				92012BF31FECF97D0001DDD2 /* PopupViewDirection.swift in Sources */,
 				92012BEE1FECF97D0001DDD2 /* UIView+Shape.swift in Sources */,
+				929BC71F203EACD9006CE745 /* ViewType.swift in Sources */,
 				92012BF01FECF97D0001DDD2 /* PopupItem.swift in Sources */,
 				92012BEF1FECF97D0001DDD2 /* PopupViewContainable.swift in Sources */,
 				92012BEB1FECF97D0001DDD2 /* PopupContainerWindow.swift in Sources */,

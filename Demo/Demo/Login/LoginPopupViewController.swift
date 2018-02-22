@@ -10,7 +10,6 @@ import UIKit
 import PopupWindow
 
 class LoginPopupViewController: BasePopupViewController {
-
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
@@ -18,9 +17,11 @@ class LoginPopupViewController: BasePopupViewController {
 
     private let popupItem = PopupItem(view: LoginPopupSNSView.view(),
                                       height: LoginPopupSNSView.Const.height,
-                                      type: .rounded(cornerSize: 8),
+                                      maxWidth: 500,
+                                      shapeType: .roundedCornerTop(cornerSize: 8),
+                                      viewType: .toast,
                                       direction: .bottom,
-                                      margin: 8,
+                                      margin: 0,
                                       hasBlur: true,
                                       duration: Const.popupDuration)
 
@@ -37,9 +38,11 @@ class LoginPopupViewController: BasePopupViewController {
                 guard let me = self else { return }
                 let popupItem = PopupItem(view: LoginPopupLoadView.view(),
                                           height: LoginPopupLoadView.Const.height,
-                                          type: .rounded(cornerSize: 8),
+                                          maxWidth: 500,
+                                          shapeType: .roundedCornerTop(cornerSize: 8),
+                                          viewType: .toast,
                                           direction: .bottom,
-                                          margin: 8,
+                                          margin: 0,
                                           hasBlur: true,
                                           duration: Const.popupDuration)
 
@@ -57,9 +60,11 @@ class LoginPopupViewController: BasePopupViewController {
     private func showCompletionView() {
         let popupItem = PopupItem(view: LoginPopupCompletionView.view(),
                                   height: LoginPopupCompletionView.Const.height,
-                                  type: .rounded(cornerSize: 8),
+                                  maxWidth: 500,
+                                  shapeType: .roundedCornerTop(cornerSize: 8),
+                                  viewType: .toast,
                                   direction: .bottom,
-                                  margin: 8,
+                                  margin: 0,
                                   hasBlur: false,
                                   duration: Const.popupDuration)
 

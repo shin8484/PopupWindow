@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum PopupViewType {
+public enum ShapeType {
     //Corner square
     case normal
 

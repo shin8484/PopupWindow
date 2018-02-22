@@ -49,13 +49,15 @@ PopupWindowManager.shared.changeKeyWindow(rootViewController: UIViewController()
 Create a PopupItem in the ViewController where you want to display the popup and call the method of BasePopupViewController
 
 ```Swift
-var popupItem: PopupItem = PopupItem(view: LoginView.view(),
-                                     height: Const.firstViewFrame.height,
-                                     type: .rounded(cornerSize: 4),
-                                     direction: .top,
-                                     margin: 8,
-                                     hasBlur: true,
-				     duration: 0.3)
+   let popupItem = PopupItem(view: LoginView.view(),
+                                      height: Const.firstViewFrame.height,
+                                      maxWidth: 500,
+                                      shapeType: .roundedCornerTop(cornerSize: 8),
+                                      viewType: .toast,
+                                      direction: .bottom,
+                                      margin: 0,
+                                      hasBlur: true,
+                                      duration: Const.popupDuration)
 ```
 First popup implementation is included in BasePopupViewController's `loadView`, `viewDidAppear`.
 If you want to create the next popup, please call `showPopupView()`.
@@ -97,18 +99,24 @@ dismissPopupView(duration: 3.3, curve: .easeInOut, delayFactor: 0.9, direction: 
 ```
 
 ### PopupItem
-PopupItem is struct to set up a popup, View, size, direction, whether it is rounded, margin, blurred or not, duration
+PopupItem is struct to set up a popup, View, size, direction, whether it is rounded, margin, blurred or not, duration, maxWidth, type
 ```Swift
 struct PopupItem {
     public let view: UIView
     public let height: CGFloat
-    public let type: PopupViewType
+    public let maxWidth: CGFloat
+    public let shapeType: ShapeType
+    public let viewType: ViewType
     public let direction: PopupViewDirection
     public let margin: CGFloat
     public let hasBlur: Bool
     public let duration: TimeInterval
 }
 ```
+### Landscape
+By setting maxWidth with popupitem's initializer, you can set the maximum width of the popup in landscape mode.
+
+![image](https://github.com/shin8484/PopupWindow/raw/master/Demo/Asset/Landscape.png)
 
 ## Requirements
 - iOS 10.0+
@@ -118,3 +126,4 @@ struct PopupItem {
 ## LICENSE
 
 Under the MIT license. See LICENSE file for details.
+

@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0199C968E07A91B17520583AAF310F44 /* PopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1071055C27B58154DE56E316FBE2700 /* PopupItem.swift */; };
-		039E0BFE5BE398A01D8FD0A49DDF48C6 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30AE753638686A635BFD59E23236480 /* PopupWindowManager.swift */; };
-		1825BB1B7A4EF0F645D86203CE4CC294 /* PopupViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438329CD66C57C7F282D7ED0A1578427 /* PopupViewType.swift */; };
-		29B3A89626AF09CF055314C9B82FEAE9 /* UIView+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF8ADD21F134BB46BD4881862779A /* UIView+Shape.swift */; };
+		0F38A2CD74F008ACD04F36C10DEA4DFD /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DB0D5E3DDC95A32BD6A554A38E186 /* PopupWindowManager.swift */; };
+		29E25DCB1387CA243E066B417649CDE2 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96130417067A373C6B99FDBC8FDC1F19 /* PopupContainerView.swift */; };
 		53E9F20F4785D0BC200908C8565B2647 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		6F2B8B3F8906563A41ED3D563F8D0F1C /* PopupContainerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E15ECEE72B01715598C13B28D698C8 /* PopupContainerWindow.swift */; };
 		6F8F745E050B5B528E78B73F91831000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		75735B28D9C0D9B58E1ACF307245E426 /* CGRect+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A426883E453ED2F0AFCF936DFA96D44 /* CGRect+Inset.swift */; };
-		77EBA2A6EEBC9CB49479E0A688385F77 /* PopupViewContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601183331144E623CA6655F0954E3AAC /* PopupViewContainable.swift */; };
-		795D7E2DAF10659AFE5AA7A412BA224E /* PopupViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02926BF205E784F9F3B06BDA9A50A1 /* PopupViewDirection.swift */; };
-		7EAF2C320B85C6875E2B1A483C6D2C68 /* PopupWindow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 401901140EF94491F70A363D3BF79C0F /* PopupWindow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EAF2C320B85C6875E2B1A483C6D2C68 /* PopupWindow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4ED3038B977221AD3F13BB00EB3724 /* PopupWindow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		998FF7FB5CB504026C4E8098C3DEA82C /* PopupViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78A2896591C32DCFD72BF178FE015F /* PopupViewDirection.swift */; };
+		9AB87991C0D03D67ED6EA3E1AB017A76 /* PopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93ED5633EF5A17DEEBB1EA043E55373 /* PopupItem.swift */; };
 		A03EAC7B6F920165915740774CE4E927 /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1297CC1D72EFE436360CFBB898F8CB2E /* Pods-Demo-dummy.m */; };
-		C79EEA78B021977ECCE2D9AD8832C333 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3290A5C8207544A6356F246A579338 /* PopupContainerView.swift */; };
-		DC8BB985D9B88022A4EBE4CBE45F5635 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5E6961354BADBEA1A7FA6666BA86A7 /* BasePopupViewController.swift */; };
+		A0425F1A341258316B9BDC96AE17BBC1 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD351F8E63CC3BD89758D01EB0723D /* BasePopupViewController.swift */; };
+		AD6CE8C3C404C1409433413A5E829395 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A9936BECE3AD0269608DA7115BE08 /* ViewType.swift */; };
+		C69F511ED7B92C8C0E060A1E58D86D6F /* PopupContainerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA2D323C8DD7F5578E36688973B6FF /* PopupContainerWindow.swift */; };
+		D818CC9E5348D801C5EB108A3269B70A /* PopupViewContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B547D7ECB7E8272EDC651D18C4FD60C8 /* PopupViewContainable.swift */; };
+		D8FFC350644C4B2C02C5D9527C34C5CB /* PopupWindow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5645B206D455E967D37075BFCC9A3A15 /* PopupWindow-dummy.m */; };
+		DB4510C81C67DE1FB9C511471C66B39C /* UIView+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4828FA35012DAA569533D775727E019 /* UIView+Shape.swift */; };
 		E0BD22F1ABC83DCA96D1D7E8D967F207 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		E45AF61342C7EF5F5EABD07F453E32A2 /* Pods-Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BC0EBDAE14E89E57D584378BDA3116 /* Pods-Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB0A4F4C8B3BE8E0AC42994CC438EF3B /* PopupWindow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C5F1204B88144B282FA594275AEF33 /* PopupWindow-dummy.m */; };
+		F40F84411BE8FED61483027CE1731ADC /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC8AFEE97E58F98B7E52028D0A265A /* ShapeType.swift */; };
+		F5E589E3F5E28DFDF32AB693C5677A74 /* CGRect+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A203643789ADF614439758217A52F630 /* CGRect+Inset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,40 +38,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E80B6F138B295BC74646CF6A7B95313 /* PopupWindow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PopupWindow-prefix.pch"; sourceTree = "<group>"; };
 		1297CC1D72EFE436360CFBB898F8CB2E /* Pods-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Demo-dummy.m"; sourceTree = "<group>"; };
 		1965FF76BB91163730C384D7B1E2C4FB /* Pods-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-frameworks.sh"; sourceTree = "<group>"; };
 		275C17A46F39C36327493626A168B6D5 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		27BC0EBDAE14E89E57D584378BDA3116 /* Pods-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Demo-umbrella.h"; sourceTree = "<group>"; };
 		282ECFCD0084F94EC1DED9401AAFE7F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		401901140EF94491F70A363D3BF79C0F /* PopupWindow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PopupWindow-umbrella.h"; sourceTree = "<group>"; };
-		438329CD66C57C7F282D7ED0A1578427 /* PopupViewType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupViewType.swift; path = PopupWindow/PopupViewType.swift; sourceTree = "<group>"; };
-		48991D6FB58AFE58972AFE12D71E969E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		542DC951798A3743DDDA4CE7D826E789 /* PopupWindow.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = PopupWindow.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4C4ED3038B977221AD3F13BB00EB3724 /* PopupWindow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PopupWindow-umbrella.h"; sourceTree = "<group>"; };
+		5645B206D455E967D37075BFCC9A3A15 /* PopupWindow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PopupWindow-dummy.m"; sourceTree = "<group>"; };
+		5DEFBAF9A3F8961EC0391DF840967A46 /* PopupWindow.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = PopupWindow.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5EFCFC4782B9646B842EB839A267D7AA /* Pods-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-resources.sh"; sourceTree = "<group>"; };
-		601183331144E623CA6655F0954E3AAC /* PopupViewContainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupViewContainable.swift; path = PopupWindow/PopupViewContainable.swift; sourceTree = "<group>"; };
+		5F78A2896591C32DCFD72BF178FE015F /* PopupViewDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupViewDirection.swift; path = PopupWindow/PopupViewDirection.swift; sourceTree = "<group>"; };
 		6536D0085DB9388FBD880E96F56C2B3C /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Demo.framework; path = "Pods-Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A426883E453ED2F0AFCF936DFA96D44 /* CGRect+Inset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Inset.swift"; sourceTree = "<group>"; };
+		6C6DB0D5E3DDC95A32BD6A554A38E186 /* PopupWindowManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupWindowManager.swift; path = PopupWindow/PopupWindowManager.swift; sourceTree = "<group>"; };
+		6D9993ACFE0E0C9B63D3F2AF2389707E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DA2D323C8DD7F5578E36688973B6FF /* PopupContainerWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupContainerWindow.swift; path = PopupWindow/PopupContainerWindow.swift; sourceTree = "<group>"; };
+		779DCB9E1C98229A3F2FF1FC774E460B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		7A01701031823CCAC30B58767A21D8A4 /* Pods-Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Demo.modulemap"; sourceTree = "<group>"; };
-		827EEEAB57CBF95F7C583D6A81509C0F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		840DF8ADD21F134BB46BD4881862779A /* UIView+Shape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Shape.swift"; sourceTree = "<group>"; };
-		8C85F866CD27C3FE26D84E0B3655262F /* PopupWindow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PopupWindow.modulemap; sourceTree = "<group>"; };
-		8E02926BF205E784F9F3B06BDA9A50A1 /* PopupViewDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupViewDirection.swift; path = PopupWindow/PopupViewDirection.swift; sourceTree = "<group>"; };
+		7EFC8AFEE97E58F98B7E52028D0A265A /* ShapeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeType.swift; path = PopupWindow/ShapeType.swift; sourceTree = "<group>"; };
 		9154BF16DC759A1EDD6A1AB4E22AA07D /* Pods-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95C5F1204B88144B282FA594275AEF33 /* PopupWindow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PopupWindow-dummy.m"; sourceTree = "<group>"; };
+		96130417067A373C6B99FDBC8FDC1F19 /* PopupContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupContainerView.swift; path = PopupWindow/PopupContainerView.swift; sourceTree = "<group>"; };
+		A203643789ADF614439758217A52F630 /* CGRect+Inset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Inset.swift"; sourceTree = "<group>"; };
 		A293EC6905CD2F770F31A1A57ACA0633 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		AF87B900ED354DEC72922B008DBEB679 /* PopupWindow.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PopupWindow.xcconfig; sourceTree = "<group>"; };
+		B3E7FE5F3BD4F2B09F366C2F73CA1A3D /* PopupWindow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PopupWindow-prefix.pch"; sourceTree = "<group>"; };
+		B547D7ECB7E8272EDC651D18C4FD60C8 /* PopupViewContainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupViewContainable.swift; path = PopupWindow/PopupViewContainable.swift; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		BD3290A5C8207544A6356F246A579338 /* PopupContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupContainerView.swift; path = PopupWindow/PopupContainerView.swift; sourceTree = "<group>"; };
-		C30AE753638686A635BFD59E23236480 /* PopupWindowManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupWindowManager.swift; path = PopupWindow/PopupWindowManager.swift; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DB5E6961354BADBEA1A7FA6666BA86A7 /* BasePopupViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePopupViewController.swift; path = PopupWindow/BasePopupViewController.swift; sourceTree = "<group>"; };
-		DCEC311A979F5E22E6FC925687983FC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		E2E15ECEE72B01715598C13B28D698C8 /* PopupContainerWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupContainerWindow.swift; path = PopupWindow/PopupContainerWindow.swift; sourceTree = "<group>"; };
-		E83F64ED1AFA62AB3AEA9F8ECDF20A8C /* PopupWindow.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PopupWindow.xcconfig; sourceTree = "<group>"; };
+		D93ED5633EF5A17DEEBB1EA043E55373 /* PopupItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupItem.swift; path = PopupWindow/PopupItem.swift; sourceTree = "<group>"; };
+		DD3B9C39A41B83BFB8398CDBBAE594EB /* PopupWindow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PopupWindow.modulemap; sourceTree = "<group>"; };
+		E4828FA35012DAA569533D775727E019 /* UIView+Shape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Shape.swift"; sourceTree = "<group>"; };
+		E6CD351F8E63CC3BD89758D01EB0723D /* BasePopupViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePopupViewController.swift; path = PopupWindow/BasePopupViewController.swift; sourceTree = "<group>"; };
 		EB2BD00EE3F4FBA187EE15A5C9968F90 /* Pods-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		F1071055C27B58154DE56E316FBE2700 /* PopupItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopupItem.swift; path = PopupWindow/PopupItem.swift; sourceTree = "<group>"; };
+		EF0A9936BECE3AD0269608DA7115BE08 /* ViewType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewType.swift; path = PopupWindow/ViewType.swift; sourceTree = "<group>"; };
 		F95244496F0A876ACF5F5908C6C62EEE /* PopupWindow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PopupWindow.framework; path = PopupWindow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B8BB10DDDD7A34111B7683DB93B960 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,23 +96,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E552F82F0A3C93D299F0ACDCEBBB1DE /* PopupWindow */ = {
+		167ECD068B24340CFD4B159E5DDF6983 /* PopupWindow */ = {
 			isa = PBXGroup;
 			children = (
-				DB5E6961354BADBEA1A7FA6666BA86A7 /* BasePopupViewController.swift */,
-				BD3290A5C8207544A6356F246A579338 /* PopupContainerView.swift */,
-				E2E15ECEE72B01715598C13B28D698C8 /* PopupContainerWindow.swift */,
-				F1071055C27B58154DE56E316FBE2700 /* PopupItem.swift */,
-				601183331144E623CA6655F0954E3AAC /* PopupViewContainable.swift */,
-				8E02926BF205E784F9F3B06BDA9A50A1 /* PopupViewDirection.swift */,
-				438329CD66C57C7F282D7ED0A1578427 /* PopupViewType.swift */,
-				C30AE753638686A635BFD59E23236480 /* PopupWindowManager.swift */,
-				B9A2984DD7BDE4AC1A7BFA492E9FC347 /* Extensions */,
-				D7ACA673ECD33A2756BF50AA439D4B41 /* Pod */,
-				C078BFAC0A2CDDBEBD911110D5D8A91A /* Support Files */,
+				E6CD351F8E63CC3BD89758D01EB0723D /* BasePopupViewController.swift */,
+				96130417067A373C6B99FDBC8FDC1F19 /* PopupContainerView.swift */,
+				75DA2D323C8DD7F5578E36688973B6FF /* PopupContainerWindow.swift */,
+				D93ED5633EF5A17DEEBB1EA043E55373 /* PopupItem.swift */,
+				B547D7ECB7E8272EDC651D18C4FD60C8 /* PopupViewContainable.swift */,
+				5F78A2896591C32DCFD72BF178FE015F /* PopupViewDirection.swift */,
+				6C6DB0D5E3DDC95A32BD6A554A38E186 /* PopupWindowManager.swift */,
+				7EFC8AFEE97E58F98B7E52028D0A265A /* ShapeType.swift */,
+				EF0A9936BECE3AD0269608DA7115BE08 /* ViewType.swift */,
+				1B6054D7D4E4A49A681A72010A470806 /* Extensions */,
+				C7C50AC5573338C62A18D73DD3E2CD86 /* Pod */,
+				6F80247577BE6381D09E38092F50F2BE /* Support Files */,
 			);
 			name = PopupWindow;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		1B6054D7D4E4A49A681A72010A470806 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A203643789ADF614439758217A52F630 /* CGRect+Inset.swift */,
+				E4828FA35012DAA569533D775727E019 /* UIView+Shape.swift */,
+			);
+			name = Extensions;
+			path = PopupWindow/Extensions;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -130,14 +143,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		4CD08667D2C89336B8CA3A16C9B99C69 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0E552F82F0A3C93D299F0ACDCEBBB1DE /* PopupWindow */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		5AD7997F6854C2804B86094B0FF6F34D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,39 +160,47 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		6F80247577BE6381D09E38092F50F2BE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D9993ACFE0E0C9B63D3F2AF2389707E /* Info.plist */,
+				DD3B9C39A41B83BFB8398CDBBAE594EB /* PopupWindow.modulemap */,
+				AF87B900ED354DEC72922B008DBEB679 /* PopupWindow.xcconfig */,
+				5645B206D455E967D37075BFCC9A3A15 /* PopupWindow-dummy.m */,
+				B3E7FE5F3BD4F2B09F366C2F73CA1A3D /* PopupWindow-prefix.pch */,
+				4C4ED3038B977221AD3F13BB00EB3724 /* PopupWindow-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Demo/Pods/Target Support Files/PopupWindow";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				4CD08667D2C89336B8CA3A16C9B99C69 /* Development Pods */,
+				AA5B98A25D095580F0B4B1D0039D39CD /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				5AD7997F6854C2804B86094B0FF6F34D /* Products */,
 				6F2351C272926D3E0225FEFC2F9C5D1F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		B9A2984DD7BDE4AC1A7BFA492E9FC347 /* Extensions */ = {
+		AA5B98A25D095580F0B4B1D0039D39CD /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6A426883E453ED2F0AFCF936DFA96D44 /* CGRect+Inset.swift */,
-				840DF8ADD21F134BB46BD4881862779A /* UIView+Shape.swift */,
+				167ECD068B24340CFD4B159E5DDF6983 /* PopupWindow */,
 			);
-			name = Extensions;
-			path = PopupWindow/Extensions;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		C078BFAC0A2CDDBEBD911110D5D8A91A /* Support Files */ = {
+		C7C50AC5573338C62A18D73DD3E2CD86 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				827EEEAB57CBF95F7C583D6A81509C0F /* Info.plist */,
-				8C85F866CD27C3FE26D84E0B3655262F /* PopupWindow.modulemap */,
-				E83F64ED1AFA62AB3AEA9F8ECDF20A8C /* PopupWindow.xcconfig */,
-				95C5F1204B88144B282FA594275AEF33 /* PopupWindow-dummy.m */,
-				0E80B6F138B295BC74646CF6A7B95313 /* PopupWindow-prefix.pch */,
-				401901140EF94491F70A363D3BF79C0F /* PopupWindow-umbrella.h */,
+				F9B8BB10DDDD7A34111B7683DB93B960 /* LICENSE */,
+				5DEFBAF9A3F8961EC0391DF840967A46 /* PopupWindow.podspec */,
+				779DCB9E1C98229A3F2FF1FC774E460B /* README.md */,
 			);
-			name = "Support Files";
-			path = "Demo/Pods/Target Support Files/PopupWindow";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF58A9AAA805FDF37F67723722F14D8F /* Pods-Demo */ = {
@@ -206,16 +219,6 @@
 			);
 			name = "Pods-Demo";
 			path = "Target Support Files/Pods-Demo";
-			sourceTree = "<group>";
-		};
-		D7ACA673ECD33A2756BF50AA439D4B41 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				DCEC311A979F5E22E6FC925687983FC2 /* LICENSE */,
-				542DC951798A3743DDDA4CE7D826E789 /* PopupWindow.podspec */,
-				48991D6FB58AFE58972AFE12D71E969E /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +265,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 553768263DAC19EF2EE086DDF1C27FBC /* Build configuration list for PBXNativeTarget "PopupWindow" */;
 			buildPhases = (
-				3261E73962C3C0FC509F849066FADBC8 /* Sources */,
+				ACDD4ED689D468080DBF3DDB273F3955 /* Sources */,
 				343A913A61DFA261646335A981FED6C9 /* Frameworks */,
 				124237765E9032061C20A256B4F6D570 /* Headers */,
 			);
@@ -311,21 +314,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3261E73962C3C0FC509F849066FADBC8 /* Sources */ = {
+		ACDD4ED689D468080DBF3DDB273F3955 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC8BB985D9B88022A4EBE4CBE45F5635 /* BasePopupViewController.swift in Sources */,
-				75735B28D9C0D9B58E1ACF307245E426 /* CGRect+Inset.swift in Sources */,
-				C79EEA78B021977ECCE2D9AD8832C333 /* PopupContainerView.swift in Sources */,
-				6F2B8B3F8906563A41ED3D563F8D0F1C /* PopupContainerWindow.swift in Sources */,
-				0199C968E07A91B17520583AAF310F44 /* PopupItem.swift in Sources */,
-				77EBA2A6EEBC9CB49479E0A688385F77 /* PopupViewContainable.swift in Sources */,
-				795D7E2DAF10659AFE5AA7A412BA224E /* PopupViewDirection.swift in Sources */,
-				1825BB1B7A4EF0F645D86203CE4CC294 /* PopupViewType.swift in Sources */,
-				FB0A4F4C8B3BE8E0AC42994CC438EF3B /* PopupWindow-dummy.m in Sources */,
-				039E0BFE5BE398A01D8FD0A49DDF48C6 /* PopupWindowManager.swift in Sources */,
-				29B3A89626AF09CF055314C9B82FEAE9 /* UIView+Shape.swift in Sources */,
+				A0425F1A341258316B9BDC96AE17BBC1 /* BasePopupViewController.swift in Sources */,
+				F5E589E3F5E28DFDF32AB693C5677A74 /* CGRect+Inset.swift in Sources */,
+				29E25DCB1387CA243E066B417649CDE2 /* PopupContainerView.swift in Sources */,
+				C69F511ED7B92C8C0E060A1E58D86D6F /* PopupContainerWindow.swift in Sources */,
+				9AB87991C0D03D67ED6EA3E1AB017A76 /* PopupItem.swift in Sources */,
+				D818CC9E5348D801C5EB108A3269B70A /* PopupViewContainable.swift in Sources */,
+				998FF7FB5CB504026C4E8098C3DEA82C /* PopupViewDirection.swift in Sources */,
+				D8FFC350644C4B2C02C5D9527C34C5CB /* PopupWindow-dummy.m in Sources */,
+				0F38A2CD74F008ACD04F36C10DEA4DFD /* PopupWindowManager.swift in Sources */,
+				F40F84411BE8FED61483027CE1731ADC /* ShapeType.swift in Sources */,
+				DB4510C81C67DE1FB9C511471C66B39C /* UIView+Shape.swift in Sources */,
+				AD6CE8C3C404C1409433413A5E829395 /* ViewType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +468,7 @@
 		};
 		6F27EF46DFF645CA1E1493E4B710E51D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E83F64ED1AFA62AB3AEA9F8ECDF20A8C /* PopupWindow.xcconfig */;
+			baseConfigurationReference = AF87B900ED354DEC72922B008DBEB679 /* PopupWindow.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -566,7 +570,7 @@
 		};
 		D92A9BCA2DD8FA949C4A761650813754 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E83F64ED1AFA62AB3AEA9F8ECDF20A8C /* PopupWindow.xcconfig */;
+			baseConfigurationReference = AF87B900ED354DEC72922B008DBEB679 /* PopupWindow.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

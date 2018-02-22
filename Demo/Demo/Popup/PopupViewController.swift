@@ -21,7 +21,9 @@ class PopupViewController: BasePopupViewController {
 
     private let topPopupItem = PopupItem(view: DemoPopupView.view(),
                                          height: DemoPopupView.Const.height,
-                                         type:.rounded(cornerSize: 8),
+                                         maxWidth: 500,
+                                         shapeType: .rounded(cornerSize: 8),
+                                         viewType: .card,
                                          direction: .top,
                                          margin: 8,
                                          hasBlur: true,
@@ -29,7 +31,9 @@ class PopupViewController: BasePopupViewController {
 
     private let bottomPopupItem = PopupItem(view: DemoPopupView.view(),
                                             height: DemoPopupView.Const.height,
-                                            type:.rounded(cornerSize: 8),
+                                            maxWidth: 500,
+                                            shapeType: .rounded(cornerSize: 8),
+                                            viewType: .card,
                                             direction: .bottom,
                                             margin: 8,
                                             hasBlur: true,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,17 +38,27 @@
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Pow-5L-mMF" firstAttribute="centerY" secondItem="ifV-SO-LuR" secondAttribute="centerY" id="9gj-k7-cqw"/>
-                        <constraint firstItem="Nea-40-cpN" firstAttribute="centerY" secondItem="ifV-SO-LuR" secondAttribute="centerY" id="Mb5-j4-GOJ"/>
                         <constraint firstItem="Nea-40-cpN" firstAttribute="leading" secondItem="ifV-SO-LuR" secondAttribute="leading" constant="64" id="OHO-xE-Mgc"/>
                         <constraint firstItem="Pow-5L-mMF" firstAttribute="leading" secondItem="ifV-SO-LuR" secondAttribute="leading" constant="16" id="Unh-4L-vfL"/>
+                        <constraint firstItem="Pow-5L-mMF" firstAttribute="top" secondItem="ifV-SO-LuR" secondAttribute="top" constant="19" id="gkX-bt-LCB"/>
                         <constraint firstAttribute="trailing" secondItem="Nea-40-cpN" secondAttribute="trailing" constant="16" id="hSe-h1-uZw"/>
+                        <constraint firstItem="Nea-40-cpN" firstAttribute="top" secondItem="ifV-SO-LuR" secondAttribute="top" constant="21.5" id="s2f-ju-wOH"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XT-hJ-gEL">
+                    <rect key="frame" x="0.0" y="29" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dqI-sD-hE4"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="4XT-hJ-gEL" secondAttribute="trailing" id="alh-8B-qZm"/>
+                <constraint firstItem="4XT-hJ-gEL" firstAttribute="leading" secondItem="N0E-w5-Io4" secondAttribute="leading" id="bdj-h3-S4R"/>
                 <constraint firstAttribute="bottom" secondItem="ifV-SO-LuR" secondAttribute="bottom" id="bmf-mX-G6j"/>
+                <constraint firstAttribute="bottom" secondItem="4XT-hJ-gEL" secondAttribute="bottom" constant="34" id="pmO-3I-fhl"/>
                 <constraint firstItem="ifV-SO-LuR" firstAttribute="trailing" secondItem="upc-ES-UIb" secondAttribute="trailing" id="rYP-2S-gAU"/>
                 <constraint firstItem="ifV-SO-LuR" firstAttribute="leading" secondItem="upc-ES-UIb" secondAttribute="leading" id="umW-sB-l5d"/>
                 <constraint firstItem="ifV-SO-LuR" firstAttribute="top" secondItem="upc-ES-UIb" secondAttribute="top" id="y4o-sP-x17"/>
@@ -60,10 +70,10 @@
                 <outlet property="containerView" destination="ifV-SO-LuR" id="lVx-A5-Mjb"/>
                 <outlet property="profileImageView" destination="Pow-5L-mMF" id="rg6-e9-waK"/>
             </connections>
-            <point key="canvasLocation" x="-1001" y="108"/>
+            <point key="canvasLocation" x="-1334.5" y="29"/>
         </view>
     </objects>
     <resources>
-        <image name="man" width="32" height="32"/>
+        <image name="man" width="35" height="35"/>
     </resources>
 </document>
