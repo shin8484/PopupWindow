@@ -26,14 +26,28 @@ open class BasePopupViewController: UIViewController {
         configurePopupContainerView()
     }
 
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let item = item else { return }
         if isShowedPopupView { return }
         isShowedPopupView = true
-
         makePopupView(with: item)
         showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+
+    @objc private func orientationDidChange(notification: NSNotification) {
+        guard let item = item else { return }
+        item.view.frame = updatePopupViewFrame(with: item)
+        convertShape(with: item)
     }
 
     private func configurePopupContainerView() {
@@ -46,14 +60,16 @@ open class BasePopupViewController: UIViewController {
     }
 
     public func makePopupView(with popupItem: PopupItem) {
-        let frame: CGRect
+        let viewWidth = view.frame.width - popupItem.margin * 2
+        let x = viewWidth > popupItem.maxWidth ? (view.frame.width - popupItem.maxWidth) / 2 : view.frame.origin.x + popupItem.margin
+        let width = viewWidth > popupItem.maxWidth ? popupItem.maxWidth : viewWidth
+        let height = calcHeight(with: popupItem)
+
         switch popupItem.direction {
         case .top:
-            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: -popupItem.height, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
-            popupItem.view.frame = frame.addTopInset(safeAreaInsets)
+            popupItem.view.frame = CGRect(x: x, y: -popupItem.height, width: width, height: height)
         case .bottom:
-            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: view.frame.height, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
-            popupItem.view.frame = frame.addBottomInset(safeAreaInsets)
+            popupItem.view.frame = CGRect(x: x , y: view.frame.height - safeAreaInsets.bottom, width: width, height: height)
         }
 
         item = popupItem
@@ -64,7 +80,7 @@ open class BasePopupViewController: UIViewController {
     public func replacePopupView(with popupItem: PopupItem) {
         guard let item = item else { return }
         item.view.removeFromSuperview()
-        popupItem.view.frame = addFrame(with: popupItem)
+        popupItem.view.frame = updatePopupViewFrame(with: popupItem)
         (popupItem.view as? PopupViewContainable)?.containerView.alpha = 0.0
         view.addSubview(popupItem.view)
 
@@ -83,7 +99,7 @@ open class BasePopupViewController: UIViewController {
         let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
         animator.addAnimations({ [weak self] in
             guard let me = self, let item = me.item else { return }
-            item.view.frame = me.addFrame(with: item)
+            item.view.frame = me.updatePopupViewFrame(with: item)
         }, delayFactor: delayFactor)
         animator.startAnimation()
 
@@ -100,7 +116,7 @@ open class BasePopupViewController: UIViewController {
         animator.addAnimations() { [weak self] in
             guard let me = self, let item = me.item else { return }
             me.addBlur(with: popupItem)
-            item.view.frame = me.addFrame(with: popupItem)
+            item.view.frame = me.updatePopupViewFrame(with: popupItem)
             (item.view as? PopupViewContainable)?.containerView.alpha = 0
         }
         animator.addCompletion() { position in
@@ -127,21 +143,37 @@ open class BasePopupViewController: UIViewController {
         animator.startAnimation()
     }
 
-    private func addFrame(with popupItem: PopupItem) -> CGRect {
-        let frame: CGRect
-        switch popupItem.direction {
-        case .top:
-            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: popupItem.margin + view.frame.origin.y, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
-            return frame.addTopInset(safeAreaInsets)
+    private func updatePopupViewFrame(with popupItem: PopupItem) -> CGRect {
+        let viewWidth = view.frame.width - popupItem.margin * 2
+        let x = viewWidth > popupItem.maxWidth ? (view.frame.width - popupItem.maxWidth) / 2 : view.frame.origin.x + popupItem.margin
+        let y = calcPositionY(with: popupItem)
+        let width = viewWidth > popupItem.maxWidth ? popupItem.maxWidth : viewWidth
+        let height = calcHeight(with: popupItem)
 
-        case .bottom:
-            frame = CGRect(x: view.frame.origin.x + popupItem.margin, y: view.frame.height - popupItem.height - popupItem.margin, width: view.frame.width - popupItem.margin * 2, height: popupItem.height)
-            return frame.addBottomInset(safeAreaInsets)
+        switch popupItem.direction {
+        case .top: return CGRect(x: x, y: y, width: width, height: height)
+        case .bottom: return CGRect(x: x, y: y, width: width, height: height)
+        }
+    }
+
+    private func calcHeight(with popupItem: PopupItem) -> CGFloat {
+        switch (popupItem.viewType, popupItem.direction) {
+        case (.toast, .top): return popupItem.height + safeAreaInsets.top
+        case (.toast, .bottom): return popupItem.height + safeAreaInsets.bottom
+        default: return popupItem.height
+        }
+    }
+    private func calcPositionY(with popupItem: PopupItem) -> CGFloat {
+        switch (popupItem.viewType, popupItem.direction) {
+        case (.toast, .top): return view.frame.origin.y
+        case (.toast, .bottom): return view.frame.height - popupItem.height - safeAreaInsets.bottom
+        case (.card, .top): return popupItem.margin + view.frame.origin.y + safeAreaInsets.top
+        case (.card, .bottom): return view.frame.height - popupItem.height - popupItem.margin - safeAreaInsets.bottom
         }
     }
 
     private func convertShape(with popupItem: PopupItem) {
-        popupItem.view.convertShape(shape: popupItem.type)
+        popupItem.view.convertShape(shape: popupItem.shapeType)
     }
 
     private func addBlur(with popupItem: PopupItem) {
