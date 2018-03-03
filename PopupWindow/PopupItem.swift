@@ -12,6 +12,7 @@ public struct PopupItem {
     public let view: UIView
     public let height: CGFloat
     public let maxWidth: CGFloat
+    public let landscapeSize: CGSize?
     public let shapeType: ShapeType
     public let viewType: ViewType
     public let direction: PopupViewDirection
@@ -19,10 +20,11 @@ public struct PopupItem {
     public let hasBlur: Bool
     public let duration: TimeInterval
 
-    public init(view: UIView, height: CGFloat, maxWidth: CGFloat, shapeType: ShapeType, viewType: ViewType, direction: PopupViewDirection, margin: CGFloat, hasBlur: Bool, duration: TimeInterval) {
+    public init(view: UIView, height: CGFloat, maxWidth: CGFloat, landscapeSize: CGSize? = nil, shapeType: ShapeType, viewType: ViewType, direction: PopupViewDirection, margin: CGFloat, hasBlur: Bool, duration: TimeInterval) {
         self.view = view
         self.height = height
         self.maxWidth = maxWidth
+        self.landscapeSize = landscapeSize
         self.shapeType = shapeType
         self.viewType = viewType
         self.direction = direction

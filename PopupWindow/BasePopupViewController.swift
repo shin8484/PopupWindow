@@ -54,6 +54,7 @@ open class BasePopupViewController: UIViewController {
         view = PopupContainerView()
         view.backgroundColor = .clear
     }
+
     public func configurePopupItem(_ popupItem: PopupItem) {
         if isShowedPopupView { return }
         item = popupItem
@@ -157,13 +158,51 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func calcHeight(with popupItem: PopupItem) -> CGFloat {
+        let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
+        if let _ = popupItem.landscapeSize, UIDeviceOrientationIsLandscape(deviceOrientation) {
+            return calcLandscapeHeight(with: popupItem)
+        } else {
+            return calcPortraitHeight(with: popupItem)
+        }
+    }
+
+    private func calcLandscapeHeight(with popupItem: PopupItem) -> CGFloat {
+        guard let landscapeSize = popupItem.landscapeSize else { return 0 }
+        switch (popupItem.viewType, popupItem.direction) {
+        case (.toast, .top): return landscapeSize.height + safeAreaInsets.top
+        case (.toast, .bottom): return landscapeSize.height + safeAreaInsets.bottom
+        default: return landscapeSize.height
+        }
+    }
+
+    private func calcPortraitHeight(with popupItem: PopupItem) -> CGFloat {
         switch (popupItem.viewType, popupItem.direction) {
         case (.toast, .top): return popupItem.height + safeAreaInsets.top
         case (.toast, .bottom): return popupItem.height + safeAreaInsets.bottom
         default: return popupItem.height
         }
     }
+
     private func calcPositionY(with popupItem: PopupItem) -> CGFloat {
+        let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
+        if let _ = popupItem.landscapeSize, UIDeviceOrientationIsLandscape(deviceOrientation) {
+            return calcLandscapePositionY(with: popupItem)
+        } else {
+            return calcPortraitPositionY(with: popupItem)
+        }
+    }
+
+    private func calcLandscapePositionY(with popupItem: PopupItem) -> CGFloat {
+        guard let landscapeSize = popupItem.landscapeSize else { return 0 }
+        switch (popupItem.viewType, popupItem.direction) {
+        case (.toast, .top): return view.frame.origin.y
+        case (.toast, .bottom): return view.frame.height - landscapeSize.height - safeAreaInsets.bottom
+        case (.card, .top): return popupItem.margin + view.frame.origin.y + safeAreaInsets.top
+        case (.card, .bottom): return view.frame.height - landscapeSize.height - popupItem.margin - safeAreaInsets.bottom
+        }
+    }
+    
+    private func calcPortraitPositionY(with popupItem: PopupItem) -> CGFloat {
         switch (popupItem.viewType, popupItem.direction) {
         case (.toast, .top): return view.frame.origin.y
         case (.toast, .bottom): return view.frame.height - popupItem.height - safeAreaInsets.bottom
