@@ -32,7 +32,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -59,8 +59,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.descriptionLabel.text = "Display a rounded popup view from the bottom of the screen."
 
         } else if indexPath.row == 4 {
-            cell.titleLabel.text = "EXAMPLE"
+            cell.titleLabel.text = "EXAMPLE POPUP"
             cell.descriptionLabel.text = "Here is an example of popup login using POPUPWINDOW"
+
+        } else if indexPath.row == 5 {
+            cell.titleLabel.text = "EXAMPLE REGISTER"
+            cell.descriptionLabel.text = "Here is an example of popup register using POPUPWINDOW"
         }
 
         return cell
@@ -91,6 +95,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
         } else if indexPath.row == 4 {
             PopupWindowManager.shared.changeKeyWindow(rootViewController: LoginPopupViewController())
+            
+        } else if indexPath.row == 5 {
+            PopupWindowManager.shared.changeKeyWindow(rootViewController: RegisterPopupViewController())
         }
     }
 }

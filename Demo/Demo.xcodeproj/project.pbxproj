@@ -31,6 +31,11 @@
 		92012C181FECFCD50001DDD2 /* LoginPopupSNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C111FECFCD40001DDD2 /* LoginPopupSNSView.swift */; };
 		92012C191FECFCD50001DDD2 /* LoginPopupSNSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92012C121FECFCD40001DDD2 /* LoginPopupSNSView.xib */; };
 		92012C1A1FECFCD50001DDD2 /* LoginPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92012C131FECFCD40001DDD2 /* LoginPopupViewController.swift */; };
+		92CB1F72204A507300F6435B /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CB1F71204A507300F6435B /* RegisterPopupViewController.swift */; };
+		92CB1F74204A50BD00F6435B /* RegisterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CB1F73204A50BD00F6435B /* RegisterPopupView.swift */; };
+		92CB1F76204A50C600F6435B /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CB1F75204A50C600F6435B /* RegisterPopupView.xib */; };
+		92CB1F78204A50E300F6435B /* RegisterPopupCompletionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CB1F77204A50E300F6435B /* RegisterPopupCompletionView.xib */; };
+		92CB1F7A204A50F900F6435B /* RegisterPopupCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CB1F79204A50F900F6435B /* RegisterPopupCompletionView.swift */; };
 		9BF86F30C612FF4E954483CA /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E632FE01ABF27D45343426A6 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +88,11 @@
 		92012C111FECFCD40001DDD2 /* LoginPopupSNSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupSNSView.swift; sourceTree = "<group>"; };
 		92012C121FECFCD40001DDD2 /* LoginPopupSNSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPopupSNSView.xib; sourceTree = "<group>"; };
 		92012C131FECFCD40001DDD2 /* LoginPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopupViewController.swift; sourceTree = "<group>"; };
+		92CB1F71204A507300F6435B /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
+		92CB1F73204A50BD00F6435B /* RegisterPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupView.swift; sourceTree = "<group>"; };
+		92CB1F75204A50C600F6435B /* RegisterPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
+		92CB1F77204A50E300F6435B /* RegisterPopupCompletionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPopupCompletionView.xib; sourceTree = "<group>"; };
+		92CB1F79204A50F900F6435B /* RegisterPopupCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupCompletionView.swift; sourceTree = "<group>"; };
 		92E399AD202C5C2000DB26C4 /* PopupWindow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PopupWindow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E632FE01ABF27D45343426A6 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0498A09B261C3611840301 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,11 +162,12 @@
 				92012BB41FECF78C0001DDD2 /* ViewController.swift */,
 				92012C1B1FECFDAB0001DDD2 /* Base */,
 				92012BF71FECFBB70001DDD2 /* Extension */,
-				92012C0C1FECFCD40001DDD2 /* Login */,
-				92012BFC1FECFBD60001DDD2 /* Popup */,
 				92012C031FECFBDF0001DDD2 /* Toast */,
-				92012BB61FECF78C0001DDD2 /* Main.storyboard */,
+				92012BFC1FECFBD60001DDD2 /* Popup */,
+				92012C0C1FECFCD40001DDD2 /* Login */,
+				92CB1F70204A502200F6435B /* Register */,
 				92012BB91FECF78C0001DDD2 /* Assets.xcassets */,
+				92012BB61FECF78C0001DDD2 /* Main.storyboard */,
 				92012BBB1FECF78C0001DDD2 /* LaunchScreen.storyboard */,
 				92012BBE1FECF78C0001DDD2 /* Info.plist */,
 			);
@@ -231,6 +242,18 @@
 				92012BF51FECFBAB0001DDD2 /* DemoPopupCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		92CB1F70204A502200F6435B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				92CB1F71204A507300F6435B /* RegisterPopupViewController.swift */,
+				92CB1F73204A50BD00F6435B /* RegisterPopupView.swift */,
+				92CB1F75204A50C600F6435B /* RegisterPopupView.xib */,
+				92CB1F79204A50F900F6435B /* RegisterPopupCompletionView.swift */,
+				92CB1F77204A50E300F6435B /* RegisterPopupCompletionView.xib */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		B4B38E5800F3F52E9FB90378 /* Pods */ = {
@@ -353,8 +376,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92012BBD1FECF78C0001DDD2 /* LaunchScreen.storyboard in Resources */,
+				92CB1F76204A50C600F6435B /* RegisterPopupView.xib in Resources */,
 				92012BBA1FECF78C0001DDD2 /* Assets.xcassets in Resources */,
 				92012C191FECFCD50001DDD2 /* LoginPopupSNSView.xib in Resources */,
+				92CB1F78204A50E300F6435B /* RegisterPopupCompletionView.xib in Resources */,
 				92012C011FECFBD60001DDD2 /* DemoPopupView.xib in Resources */,
 				92012C171FECFCD50001DDD2 /* LoginPopupLoadView.xib in Resources */,
 				92012C151FECFCD50001DDD2 /* LoginPopupCompletionView.xib in Resources */,
@@ -444,11 +469,14 @@
 				92012C1A1FECFCD50001DDD2 /* LoginPopupViewController.swift in Sources */,
 				92012C161FECFCD50001DDD2 /* LoginPopupLoadView.swift in Sources */,
 				92012BFB1FECFBB70001DDD2 /* UIView+Shadow.swift in Sources */,
+				92CB1F74204A50BD00F6435B /* RegisterPopupView.swift in Sources */,
 				92012BF61FECFBAB0001DDD2 /* DemoPopupCell.swift in Sources */,
 				92012C181FECFCD50001DDD2 /* LoginPopupSNSView.swift in Sources */,
 				92012C091FECFBDF0001DDD2 /* ToastViewController.swift in Sources */,
 				92012BB31FECF78C0001DDD2 /* AppDelegate.swift in Sources */,
 				92012C001FECFBD60001DDD2 /* DemoPopupView.swift in Sources */,
+				92CB1F72204A507300F6435B /* RegisterPopupViewController.swift in Sources */,
+				92CB1F7A204A50F900F6435B /* RegisterPopupCompletionView.swift in Sources */,
 				92012BFA1FECFBB70001DDD2 /* UIColor+Background.swift in Sources */,
 				92012C021FECFBD60001DDD2 /* PopupViewController.swift in Sources */,
 				92012C0B1FECFBF00001DDD2 /* Nibable.swift in Sources */,
