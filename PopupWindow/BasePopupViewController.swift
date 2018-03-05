@@ -12,6 +12,7 @@ open class BasePopupViewController: UIViewController {
 
     private var item: PopupItem?
     private var isShowedPopupView: Bool = false
+    private var isOrientationDidChange: Bool = false
 
     private var safeAreaInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
@@ -26,11 +27,6 @@ open class BasePopupViewController: UIViewController {
         configurePopupContainerView()
     }
 
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    }
-
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let item = item else { return }
@@ -40,14 +36,18 @@ open class BasePopupViewController: UIViewController {
         showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
     }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    }
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
-    @objc private func orientationDidChange(notification: NSNotification) {
-        guard let item = item else { return }
+        guard let item = item, isOrientationDidChange else { return }
         item.view.frame = updatePopupViewFrame(with: item)
         convertShape(with: item)
+        isOrientationDidChange = false
+    }
+
+    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        isOrientationDidChange = true
     }
 
     private func configurePopupContainerView() {
@@ -151,10 +151,7 @@ open class BasePopupViewController: UIViewController {
         let width = viewWidth > popupItem.maxWidth ? popupItem.maxWidth : viewWidth
         let height = calcHeight(with: popupItem)
 
-        switch popupItem.direction {
-        case .top: return CGRect(x: x, y: y, width: width, height: height)
-        case .bottom: return CGRect(x: x, y: y, width: width, height: height)
-        }
+        return CGRect(x: x, y: y, width: width, height: height)
     }
 
     private func calcHeight(with popupItem: PopupItem) -> CGFloat {
@@ -167,7 +164,10 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func calcLandscapeHeight(with popupItem: PopupItem) -> CGFloat {
-        guard let landscapeSize = popupItem.landscapeSize else { return 0 }
+        let userInterfaceIdiom = UIDevice.current.userInterfaceIdiom
+        if userInterfaceIdiom == .pad { return popupItem.height }
+
+        guard let landscapeSize = popupItem.landscapeSize else { return popupItem.height }
         switch (popupItem.viewType, popupItem.direction) {
         case (.toast, .top): return landscapeSize.height + safeAreaInsets.top
         case (.toast, .bottom): return landscapeSize.height + safeAreaInsets.bottom
@@ -184,6 +184,9 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func calcPositionY(with popupItem: PopupItem) -> CGFloat {
+        let userInterfaceIdiom = UIDevice.current.userInterfaceIdiom
+        if userInterfaceIdiom == .pad { return calcPortraitPositionY(with: popupItem) }
+
         let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
         if let _ = popupItem.landscapeSize, UIDeviceOrientationIsLandscape(deviceOrientation) {
             return calcLandscapePositionY(with: popupItem)
