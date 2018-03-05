@@ -164,8 +164,9 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func calcLandscapeHeight(with popupItem: PopupItem) -> CGFloat {
-        let userInterfaceIdiom = UIDevice.current.userInterfaceIdiom
-        if userInterfaceIdiom == .pad { return popupItem.height }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return calcPortraitHeight(with: popupItem)
+        }
 
         guard let landscapeSize = popupItem.landscapeSize else { return popupItem.height }
         switch (popupItem.viewType, popupItem.direction) {
@@ -184,8 +185,9 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func calcPositionY(with popupItem: PopupItem) -> CGFloat {
-        let userInterfaceIdiom = UIDevice.current.userInterfaceIdiom
-        if userInterfaceIdiom == .pad { return calcPortraitPositionY(with: popupItem) }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return calcPortraitPositionY(with: popupItem)
+        }
 
         let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
         if let _ = popupItem.landscapeSize, UIDeviceOrientationIsLandscape(deviceOrientation) {
