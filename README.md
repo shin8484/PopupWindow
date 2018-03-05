@@ -105,6 +105,7 @@ struct PopupItem {
     public let view: UIView
     public let height: CGFloat
     public let maxWidth: CGFloat
+    public let landscapeSize: CGSize?
     public let shapeType: ShapeType
     public let viewType: ViewType
     public let direction: PopupViewDirection
@@ -113,10 +114,18 @@ struct PopupItem {
     public let duration: TimeInterval
 }
 ```
-### Landscape
+## Landscape
+### maxWidth
 By setting maxWidth with popupitem's initializer, you can set the maximum width of the popup in landscape mode.
 
 ![image](https://github.com/shin8484/PopupWindow/raw/master/Demo/Asset/Landscape.png)
+
+### landscapeSize
+You can set popup size at landscape.
+The size changes only when landscape size is set, and the default is nil.
+Using landscapeSize and SizeClass, you can customize PopupVIew that has the widest width like GIF below when rotating.
+
+![demo_06](https://github.com/shin8484/PopupWindow/raw/master/Demo/Asset/RegisterExample.gif)
 
 ## Requirements
 - iOS 10.0+
