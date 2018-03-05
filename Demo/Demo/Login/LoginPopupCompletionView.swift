@@ -35,4 +35,3 @@ class LoginPopupCompletionView: UIView, PopupViewContainable, Nibable {
         boldLabel.text = "Login finished"
     }
 }
-

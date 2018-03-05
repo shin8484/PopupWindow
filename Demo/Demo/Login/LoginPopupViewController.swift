@@ -13,11 +13,13 @@ class LoginPopupViewController: BasePopupViewController {
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
+        static let landscapeSize: CGSize = CGSize(width: 500, height: 237)
     }
 
     private let popupItem = PopupItem(view: LoginPopupSNSView.view(),
                                       height: LoginPopupSNSView.Const.height,
                                       maxWidth: 500,
+                                      landscapeSize: Const.landscapeSize,
                                       shapeType: .roundedCornerTop(cornerSize: 8),
                                       viewType: .toast,
                                       direction: .bottom,
