@@ -39,27 +39,7 @@ class RegisterPopupViewController: BasePopupViewController {
 
             view.registerButtonTapHandler = { [weak self] in
                 guard let me = self else { return }
-//                DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 3.0 ) {
-                    me.showCompletionView()
-//                }
-
-//                let popupItem = PopupItem(view: LoginPopupLoadView.view(),
-//                                          height: LoginPopupLoadView.Const.height,
-//                                          maxWidth: 500,
-//                                          shapeType: .roundedCornerTop(cornerSize: 8),
-//                                          viewType: .toast,
-//                                          direction: .bottom,
-//                                          margin: 0,
-//                                          hasBlur: true,
-//                                          duration: Const.popupDuration)
-//
-//                me.transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
-//                    guard let me = self else { return }
-//                    me.replacePopupView(with: popupItem)
-//                    DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 3.0 ) {
-//                        me.showCompletionView()
-//                    }
-//                }
+                me.showCompletionView()
             }
         }
     }
