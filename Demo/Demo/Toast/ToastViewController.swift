@@ -14,6 +14,8 @@ class ToastViewController: BasePopupViewController {
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
+        static let topPopupOption = PopupOption(shapeType: .normal, viewType: .toast, direction: .top, hasBlur: false)
+        static let bottomPopupOption = PopupOption(shapeType: .normal, viewType: .toast, direction: .bottom, hasBlur: false)
     }
 
     var isTop: Bool = true
@@ -22,22 +24,12 @@ class ToastViewController: BasePopupViewController {
     private let topPopupItem = PopupItem(view: DemoToastView.view(),
                                          height: DemoToastView.Const.height,
                                          maxWidth: 500,
-                                         shapeType: .normal,
-                                         viewType: .toast,
-                                         direction: .top,
-                                         margin: 0,
-                                         hasBlur: false,
-                                         duration: Const.popupDuration)
+                                         popupOption: Const.topPopupOption)
 
     private let bottomPopupItem = PopupItem(view: DemoToastView.view(),
                                             height: DemoToastView.Const.height,
                                             maxWidth: 500,
-                                            shapeType: .normal,
-                                            viewType: .toast,
-                                            direction: .bottom,
-                                            margin: 0,
-                                            hasBlur: false,
-                                            duration: Const.popupDuration)
+                                            popupOption: Const.bottomPopupOption)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +51,7 @@ class ToastViewController: BasePopupViewController {
 
         DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 3.0 ) { [weak self] in
             guard let me = self, let popupItem = me.popupItem else { return }
-            me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: popupItem.direction) { _ in
+            me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: popupItem.popupOption.direction) { _ in
                 PopupWindowManager.shared.changeKeyWindow(rootViewController: nil)
             }
         }

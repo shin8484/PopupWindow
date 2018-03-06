@@ -15,18 +15,15 @@ class RegisterPopupViewController: BasePopupViewController {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
         static let landscapeSize: CGSize = CGSize(width: 500, height: 249)
+        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
+        static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
 
     private let popupItem = PopupItem(view: RegisterPopupView.view(),
                                       height: RegisterPopupView.Const.height,
                                       maxWidth: 500,
                                       landscapeSize: Const.landscapeSize,
-                                      shapeType: .roundedCornerTop(cornerSize: 8),
-                                      viewType: .toast,
-                                      direction: .bottom,
-                                      margin: 0,
-                                      hasBlur: true,
-                                      duration: Const.popupDuration)
+                                      popupOption: Const.popupOption)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +45,7 @@ class RegisterPopupViewController: BasePopupViewController {
         let popupItem = PopupItem(view: RegisterPopupCompletionView.view(),
                                   height: RegisterPopupCompletionView.Const.height,
                                   maxWidth: 500,
-                                  shapeType: .roundedCornerTop(cornerSize: 8),
-                                  viewType: .toast,
-                                  direction: .bottom,
-                                  margin: 0,
-                                  hasBlur: false,
-                                  duration: Const.popupDuration)
+                                  popupOption: Const.popupCompletionOption)
 
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }

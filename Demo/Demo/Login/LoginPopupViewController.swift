@@ -14,18 +14,15 @@ class LoginPopupViewController: BasePopupViewController {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
         static let landscapeSize: CGSize = CGSize(width: 500, height: 237)
+        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
+        static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
 
     private let popupItem = PopupItem(view: LoginPopupSNSView.view(),
                                       height: LoginPopupSNSView.Const.height,
                                       maxWidth: 500,
                                       landscapeSize: Const.landscapeSize,
-                                      shapeType: .roundedCornerTop(cornerSize: 8),
-                                      viewType: .toast,
-                                      direction: .bottom,
-                                      margin: 0,
-                                      hasBlur: true,
-                                      duration: Const.popupDuration)
+                                      popupOption: Const.popupOption)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +38,7 @@ class LoginPopupViewController: BasePopupViewController {
                 let popupItem = PopupItem(view: LoginPopupLoadView.view(),
                                           height: LoginPopupLoadView.Const.height,
                                           maxWidth: 500,
-                                          shapeType: .roundedCornerTop(cornerSize: 8),
-                                          viewType: .toast,
-                                          direction: .bottom,
-                                          margin: 0,
-                                          hasBlur: true,
-                                          duration: Const.popupDuration)
+                                          popupOption: Const.popupOption)
 
                 me.transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
                     guard let me = self else { return }
@@ -63,12 +55,7 @@ class LoginPopupViewController: BasePopupViewController {
         let popupItem = PopupItem(view: LoginPopupCompletionView.view(),
                                   height: LoginPopupCompletionView.Const.height,
                                   maxWidth: 500,
-                                  shapeType: .roundedCornerTop(cornerSize: 8),
-                                  viewType: .toast,
-                                  direction: .bottom,
-                                  margin: 0,
-                                  hasBlur: false,
-                                  duration: Const.popupDuration)
+                                  popupOption: Const.popupCompletionOption)
 
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }
