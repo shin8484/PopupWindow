@@ -10,10 +10,7 @@ import UIKit
 
 public class PopupWindowManager {
     public var popupContainerWindow: PopupContainerWindow?
-
     public static let shared = PopupWindowManager()
-    private init() {
-    }
 
     public func changeKeyWindow(rootViewController: UIViewController?) {
         if let rootViewController = rootViewController {

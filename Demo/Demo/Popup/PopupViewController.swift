@@ -10,7 +10,6 @@ import UIKit
 import PopupWindow
 
 class PopupViewController: BasePopupViewController {
-
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
@@ -21,15 +20,8 @@ class PopupViewController: BasePopupViewController {
     var isTop: Bool = true
     private var popupItem: PopupItem?
 
-    private let topPopupItem = PopupItem(view: DemoPopupView.view(),
-                                         height: DemoPopupView.Const.height,
-                                         maxWidth: 500,
-                                         popupOption: Const.topPopupOption)
-
-    private let bottomPopupItem = PopupItem(view: DemoPopupView.view(),
-                                            height: DemoPopupView.Const.height,
-                                            maxWidth: 500,
-                                            popupOption: Const.bottomPopupOption)
+    private let topPopupItem = PopupItem(view: DemoPopupView.view(), height: DemoPopupView.Const.height, maxWidth: 500,  popupOption: Const.topPopupOption)
+    private let bottomPopupItem = PopupItem(view: DemoPopupView.view(), height: DemoPopupView.Const.height, maxWidth: 500, popupOption: Const.bottomPopupOption)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,5 +54,3 @@ class PopupViewController: BasePopupViewController {
         }
     }
 }
-
-

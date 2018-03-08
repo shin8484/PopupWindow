@@ -9,7 +9,6 @@
 import UIKit
 
 open class BasePopupViewController: UIViewController {
-
     private var item: PopupItem?
     private var isShowedPopupView: Bool = false
     private var isOrientationDidChange: Bool = false

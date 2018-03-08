@@ -14,39 +14,33 @@ class RegisterPopupViewController: BasePopupViewController {
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
-        static let landscapeSize: CGSize = CGSize(width: 500, height: 249)
+        static let maxWidth: CGFloat = 500
+        static let landscapeSize: CGSize = CGSize(width: maxWidth, height: 249)
         static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
         static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
 
-    private let popupItem = PopupItem(view: RegisterPopupView.view(),
-                                      height: RegisterPopupView.Const.height,
-                                      maxWidth: 500,
-                                      landscapeSize: Const.landscapeSize,
-                                      popupOption: Const.popupOption)
+    private let registerPopupView = RegisterPopupView.view()
+    private let registerPopupCompletionView = RegisterPopupCompletionView.view()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let popupItem = PopupItem(view: registerPopupView, height: RegisterPopupView.Const.height, maxWidth: Const.maxWidth, landscapeSize: Const.landscapeSize, popupOption: Const.popupOption)
         configurePopupItem(popupItem)
 
-        if let view = popupItem.view as? RegisterPopupView {
-            view.closeButtonTapHandler = { [weak self] in
-                self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
-            }
+        registerPopupView.closeButtonTapHandler = { [weak self] in
+            self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
+        }
 
-            view.registerButtonTapHandler = { [weak self] in
-                guard let me = self else { return }
-                me.showCompletionView()
-            }
+        registerPopupView.registerButtonTapHandler = { [weak self] in
+            guard let me = self else { return }
+            me.showCompletionView()
         }
     }
 
     private func showCompletionView() {
-        let popupItem = PopupItem(view: RegisterPopupCompletionView.view(),
-                                  height: RegisterPopupCompletionView.Const.height,
-                                  maxWidth: 500,
-                                  popupOption: Const.popupCompletionOption)
-
+        let popupItem = PopupItem(view: registerPopupCompletionView, height: RegisterPopupCompletionView.Const.height, maxWidth: Const.maxWidth, popupOption: Const.popupCompletionOption)
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }
             me.replacePopupView(with: popupItem)
