@@ -9,7 +9,6 @@
 import UIKit
 
 open class BasePopupViewController: UIViewController {
-
     private var item: PopupItem?
     private var isShowedPopupView: Bool = false
     private var isOrientationDidChange: Bool = false
@@ -33,7 +32,7 @@ open class BasePopupViewController: UIViewController {
         if isShowedPopupView { return }
         isShowedPopupView = true
         makePopupView(with: item)
-        showPopupView(duration: item.duration, curve: .easeInOut, delayFactor: 0.0)
+        showPopupView(duration: item.popupOption.duration, curve: .easeInOut, delayFactor: 0.0)
     }
 
     override open func viewDidLayoutSubviews() {
@@ -61,12 +60,12 @@ open class BasePopupViewController: UIViewController {
     }
 
     public func makePopupView(with popupItem: PopupItem) {
-        let viewWidth = view.frame.width - popupItem.margin * 2
-        let x = viewWidth > popupItem.maxWidth ? (view.frame.width - popupItem.maxWidth) / 2 : view.frame.origin.x + popupItem.margin
+        let viewWidth = view.frame.width - popupItem.popupOption.margin * 2
+        let x = viewWidth > popupItem.maxWidth ? (view.frame.width - popupItem.maxWidth) / 2 : view.frame.origin.x + popupItem.popupOption.margin
         let width = viewWidth > popupItem.maxWidth ? popupItem.maxWidth : viewWidth
         let height = calcHeight(with: popupItem)
 
-        switch popupItem.direction {
+        switch popupItem.popupOption.direction {
         case .top:
             popupItem.view.frame = CGRect(x: x, y: -popupItem.height, width: width, height: height)
         case .bottom:
@@ -145,8 +144,8 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func updatePopupViewFrame(with popupItem: PopupItem) -> CGRect {
-        let viewWidth = view.frame.width - popupItem.margin * 2
-        let x = viewWidth > popupItem.maxWidth ? (view.frame.width - popupItem.maxWidth) / 2 : view.frame.origin.x + popupItem.margin
+        let viewWidth = view.frame.width - popupItem.popupOption.margin * 2
+        let x = viewWidth > popupItem.maxWidth ? (view.frame.width - popupItem.maxWidth) / 2 : view.frame.origin.x + popupItem.popupOption.margin
         let y = calcPositionY(with: popupItem)
         let width = viewWidth > popupItem.maxWidth ? popupItem.maxWidth : viewWidth
         let height = calcHeight(with: popupItem)
@@ -169,7 +168,7 @@ open class BasePopupViewController: UIViewController {
         }
 
         guard let landscapeSize = popupItem.landscapeSize else { return popupItem.height }
-        switch (popupItem.viewType, popupItem.direction) {
+        switch (popupItem.popupOption.viewType, popupItem.popupOption.direction) {
         case (.toast, .top): return landscapeSize.height + safeAreaInsets.top
         case (.toast, .bottom): return landscapeSize.height + safeAreaInsets.bottom
         default: return landscapeSize.height
@@ -177,7 +176,7 @@ open class BasePopupViewController: UIViewController {
     }
 
     private func calcPortraitHeight(with popupItem: PopupItem) -> CGFloat {
-        switch (popupItem.viewType, popupItem.direction) {
+        switch (popupItem.popupOption.viewType, popupItem.popupOption.direction) {
         case (.toast, .top): return popupItem.height + safeAreaInsets.top
         case (.toast, .bottom): return popupItem.height + safeAreaInsets.bottom
         default: return popupItem.height
@@ -199,29 +198,29 @@ open class BasePopupViewController: UIViewController {
 
     private func calcLandscapePositionY(with popupItem: PopupItem) -> CGFloat {
         guard let landscapeSize = popupItem.landscapeSize else { return 0 }
-        switch (popupItem.viewType, popupItem.direction) {
+        switch (popupItem.popupOption.viewType, popupItem.popupOption.direction) {
         case (.toast, .top): return view.frame.origin.y
         case (.toast, .bottom): return view.frame.height - landscapeSize.height - safeAreaInsets.bottom
-        case (.card, .top): return popupItem.margin + view.frame.origin.y + safeAreaInsets.top
-        case (.card, .bottom): return view.frame.height - landscapeSize.height - popupItem.margin - safeAreaInsets.bottom
+        case (.card, .top): return popupItem.popupOption.margin + view.frame.origin.y + safeAreaInsets.top
+        case (.card, .bottom): return view.frame.height - landscapeSize.height - popupItem.popupOption.margin - safeAreaInsets.bottom
         }
     }
     
     private func calcPortraitPositionY(with popupItem: PopupItem) -> CGFloat {
-        switch (popupItem.viewType, popupItem.direction) {
+        switch (popupItem.popupOption.viewType, popupItem.popupOption.direction) {
         case (.toast, .top): return view.frame.origin.y
         case (.toast, .bottom): return view.frame.height - popupItem.height - safeAreaInsets.bottom
-        case (.card, .top): return popupItem.margin + view.frame.origin.y + safeAreaInsets.top
-        case (.card, .bottom): return view.frame.height - popupItem.height - popupItem.margin - safeAreaInsets.bottom
+        case (.card, .top): return popupItem.popupOption.margin + view.frame.origin.y + safeAreaInsets.top
+        case (.card, .bottom): return view.frame.height - popupItem.height - popupItem.popupOption.margin - safeAreaInsets.bottom
         }
     }
 
     private func convertShape(with popupItem: PopupItem) {
-        popupItem.view.convertShape(shape: popupItem.shapeType)
+        popupItem.view.convertShape(shape: popupItem.popupOption.shapeType)
     }
 
     private func addBlur(with popupItem: PopupItem) {
-        if popupItem.hasBlur {
+        if popupItem.popupOption.hasBlur {
             view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
             (view as? PopupContainerView)?.isAbleToTouchLower = false
         } else {

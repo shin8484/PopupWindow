@@ -35,8 +35,8 @@ class DemoPopupView: UIView, PopupViewContainable, Nibable {
     }
 
     func configureDemoPopupView(popupItem: PopupItem) {
-        backgroundColor = popupItem.direction == .top ? UIColor.rgba(r: 250, g: 83, b: 122, alpha: 1.0) : UIColor.rgba(r: 78, g: 154, b: 250, alpha: 1.0)
-        titleLabel.text = popupItem.direction == .top ? "TOP" : "BOTTOM"
+        backgroundColor = popupItem.popupOption.direction == .top ? UIColor.rgba(r: 250, g: 83, b: 122, alpha: 1.0) : UIColor.rgba(r: 78, g: 154, b: 250, alpha: 1.0)
+        titleLabel.text = popupItem.popupOption.direction == .top ? "TOP" : "BOTTOM"
         descriptionLabel.text = "It disappears after 3 seconds. Or you can erase it with the close button"
     }
 

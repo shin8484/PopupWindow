@@ -29,7 +29,7 @@ class DemoToastView: UIView, PopupViewContainable, Nibable {
     }
 
     func configureDemoToastView(popupItem: PopupItem) {
-        titleLabel.text = popupItem.direction == .top ? "TOP" : "BOTTOM"
+        titleLabel.text = popupItem.popupOption.direction == .top ? "TOP" : "BOTTOM"
         descriptionLabel.text = "It disappears after 3 seconds."
         titleLabel.textColor = .white
         descriptionLabel.textColor = .white
