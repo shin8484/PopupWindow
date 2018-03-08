@@ -49,15 +49,11 @@ PopupWindowManager.shared.changeKeyWindow(rootViewController: UIViewController()
 Create a PopupItem in the ViewController where you want to display the popup and call the method of BasePopupViewController
 
 ```Swift
-   let popupItem = PopupItem(view: LoginView.view(),
-                                      height: Const.firstViewFrame.height,
-                                      maxWidth: 500,
-                                      shapeType: .roundedCornerTop(cornerSize: 8),
-                                      viewType: .toast,
-                                      direction: .bottom,
-                                      margin: 0,
-                                      hasBlur: true,
-                                      duration: Const.popupDuration)
+let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
+let popupItem = PopupItem(view: loginView,
+                          height: Const.firstViewFrame.height,
+                          maxWidth: 500,
+                          popupOption: popupOption)
 ```
 First popup implementation is included in BasePopupViewController's `loadView`, `viewDidAppear`.
 If you want to create the next popup, please call `showPopupView()`.
@@ -99,13 +95,19 @@ dismissPopupView(duration: 3.3, curve: .easeInOut, delayFactor: 0.9, direction: 
 ```
 
 ### PopupItem
-PopupItem is struct to set up a popup, View, size, direction, whether it is rounded, margin, blurred or not, duration, maxWidth, type
+PopupItem and PopupOption are struct to set up a popup, View, size, direction, whether it is rounded, margin, blurred or not, duration, maxWidth, type
+
 ```Swift
-struct PopupItem {
+public struct PopupItem {
     public let view: UIView
     public let height: CGFloat
     public let maxWidth: CGFloat
     public let landscapeSize: CGSize?
+    public let popupOption: PopupOption
+}
+```
+```Swift
+public struct PopupOption {
     public let shapeType: ShapeType
     public let viewType: ViewType
     public let direction: PopupViewDirection
