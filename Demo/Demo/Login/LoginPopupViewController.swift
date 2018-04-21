@@ -48,6 +48,12 @@ class LoginPopupViewController: BasePopupViewController {
         }
     }
 
+    override func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer, completion: @escaping (() -> Void)) {
+        if gestureRecognizer.state == .ended && canTapDismiss {
+            dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
+        }
+    }
+
     private func showCompletionView() {
         let popupItem = PopupItem(view: completionView,
                                   height: LoginPopupCompletionView.Const.height,
