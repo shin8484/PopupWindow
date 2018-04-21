@@ -39,7 +39,7 @@ class RegisterPopupViewController: BasePopupViewController {
         }
     }
 
-    override func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer, completion: @escaping (() -> Void)) {
+    override func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer) {
         if gestureRecognizer.state == .ended && canTapDismiss {
             dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
         }
