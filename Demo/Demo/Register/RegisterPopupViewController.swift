@@ -39,6 +39,12 @@ class RegisterPopupViewController: BasePopupViewController {
         }
     }
 
+    override func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer, completion: @escaping (() -> Void)) {
+        if gestureRecognizer.state == .ended && canTapDismiss {
+            dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
+        }
+    }
+
     private func showCompletionView() {
         let popupItem = PopupItem(view: registerPopupCompletionView, height: RegisterPopupCompletionView.Const.height, maxWidth: Const.maxWidth, popupOption: Const.popupCompletionOption)
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
