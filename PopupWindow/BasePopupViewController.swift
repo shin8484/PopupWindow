@@ -21,7 +21,7 @@ open class BasePopupViewController: UIViewController {
         }
     }
 
-    var canTapDismiss: Bool {
+    open var canTapDismiss: Bool {
         return item?.popupOption.canTapDismiss ?? false
     }
 
