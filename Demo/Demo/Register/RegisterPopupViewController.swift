@@ -16,7 +16,7 @@ class RegisterPopupViewController: BasePopupViewController {
         static let transformDuration: TimeInterval = 0.4
         static let maxWidth: CGFloat = 500
         static let landscapeSize: CGSize = CGSize(width: maxWidth, height: 249)
-        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
+        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, canTapDismiss: true)
         static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
 

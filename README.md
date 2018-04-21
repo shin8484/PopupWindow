@@ -114,6 +114,7 @@ public struct PopupOption {
     public let margin: CGFloat
     public let hasBlur: Bool
     public let duration: TimeInterval
+    public let canTapDismiss: Bool
 }
 ```
 ## Landscape

@@ -31,13 +31,15 @@ public struct PopupOption {
     public let margin: CGFloat
     public let hasBlur: Bool
     public let duration: TimeInterval
+    public let canTapDismiss: Bool
 
-    public init(shapeType: ShapeType, viewType: ViewType, direction: PopupViewDirection, margin: CGFloat = 0, hasBlur: Bool = true, duration: TimeInterval = 0.3) {
+    public init(shapeType: ShapeType, viewType: ViewType, direction: PopupViewDirection, margin: CGFloat = 0, hasBlur: Bool = true, duration: TimeInterval = 0.3, canTapDismiss: Bool = false) {
         self.shapeType = shapeType
         self.viewType = viewType
         self.direction = direction
         self.margin = margin
         self.hasBlur = hasBlur
         self.duration = duration
+        self.canTapDismiss = canTapDismiss
     }
 }

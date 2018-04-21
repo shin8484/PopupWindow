@@ -1,6 +1,6 @@
 {
   "name": "PopupWindow",
-  "version": "0.2.2",
+  "version": "0.2.6",
   "license": {
     "type": "MIT"
   },
@@ -11,7 +11,7 @@
   "summary": "Creates and displays Popup on another UIWindow.",
   "source": {
     "git": "https://github.com/shin8484/PopupWindow.git",
-    "tag": "0.2.2"
+    "tag": "0.2.6"
   },
   "platforms": {
     "ios": "10.0"
