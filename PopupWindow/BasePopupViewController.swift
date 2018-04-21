@@ -53,11 +53,11 @@ open class BasePopupViewController: UIViewController {
         view = PopupContainerView()
         view.backgroundColor = .clear
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture(_:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapPopupContainerView(_:)))
         view.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    @objc private func tapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc open func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let item = item else { return }
         if gestureRecognizer.state == .ended && item.popupOption.canTapDismiss {
             dismissPopupView(duration: 0.3, curve: .easeInOut, direction: .bottom) { _ in }
