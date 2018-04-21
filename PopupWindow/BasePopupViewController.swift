@@ -21,6 +21,10 @@ open class BasePopupViewController: UIViewController {
         }
     }
 
+    var canTapDismiss: Bool {
+        return item?.popupOption.canTapDismiss ?? false
+    }
+
     override open func loadView() {
         super.loadView()
         configurePopupContainerView()
