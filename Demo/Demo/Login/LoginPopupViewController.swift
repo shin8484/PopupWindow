@@ -15,7 +15,8 @@ class LoginPopupViewController: BasePopupViewController {
         static let transformDuration: TimeInterval = 0.4
         static let maxWidth: CGFloat = 500
         static let landscapeSize: CGSize = CGSize(width: maxWidth, height: 237)
-        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
+        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, canTapDismiss: true)
+        static let popupLoadingOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
         static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
 
@@ -35,7 +36,7 @@ class LoginPopupViewController: BasePopupViewController {
 
         popupView.snsButtonTapHandler = { [weak self] in
             guard let me = self else { return }
-            let popupItem = PopupItem(view: me.loadView, height: LoginPopupLoadView.Const.height, maxWidth: Const.maxWidth, popupOption: Const.popupOption)
+            let popupItem = PopupItem(view: me.loadView, height: LoginPopupLoadView.Const.height, maxWidth: Const.maxWidth, popupOption: Const.popupLoadingOption)
 
             me.transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
                 guard let me = self else { return }
