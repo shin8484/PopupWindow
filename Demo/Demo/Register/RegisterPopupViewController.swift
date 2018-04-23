@@ -50,8 +50,11 @@ class RegisterPopupViewController: BasePopupViewController {
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }
             me.replacePopupView(with: popupItem)
-            me.dismissPopupView(duration: 3.3, curve: .easeInOut, delayFactor: 0.9, direction: .bottom) { _ in
-                PopupWindowManager.shared.changeKeyWindow(rootViewController: nil)
+            DispatchQueue.main.asyncAfter( deadline: DispatchTime.now() + 3.0 ) { [weak self] in
+                guard let me = self else { return }
+                me.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: popupItem.popupOption.direction) { _ in
+                    PopupWindowManager.shared.changeKeyWindow(rootViewController: nil)
+                }
             }
         }
     }
