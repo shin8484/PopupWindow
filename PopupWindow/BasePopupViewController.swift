@@ -12,6 +12,7 @@ open class BasePopupViewController: UIViewController {
     private var item: PopupItem?
     private var isShowedPopupView: Bool = false
     private var isOrientationDidChange: Bool = false
+    private let blurSpaceView = PopupContainerView()
 
     private var safeAreaInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
@@ -21,7 +22,7 @@ open class BasePopupViewController: UIViewController {
         }
     }
 
-    open var canTapDismiss: Bool {
+    public var canTapDismiss: Bool {
         return item?.popupOption.canTapDismiss ?? false
     }
 
@@ -35,6 +36,7 @@ open class BasePopupViewController: UIViewController {
         guard let item = item else { return }
         if isShowedPopupView { return }
         isShowedPopupView = true
+        configureBlurSpaceView()
         makePopupView(with: item)
         showPopupView(duration: item.popupOption.duration, curve: .easeInOut, delayFactor: 0.0)
     }
@@ -44,6 +46,7 @@ open class BasePopupViewController: UIViewController {
 
         guard let item = item, isOrientationDidChange else { return }
         item.view.frame = updatePopupViewFrame(with: item)
+        blurSpaceView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         convertShape(with: item)
         isOrientationDidChange = false
     }
@@ -56,9 +59,14 @@ open class BasePopupViewController: UIViewController {
     private func configurePopupContainerView() {
         view = PopupContainerView()
         view.backgroundColor = .clear
+    }
 
+    private func configureBlurSpaceView() {
+        blurSpaceView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapPopupContainerView(_:)))
-        view.addGestureRecognizer(tapGestureRecognizer)
+        blurSpaceView.addGestureRecognizer(tapGestureRecognizer)
+        blurSpaceView.backgroundColor  = .clear
+        view.addSubview(blurSpaceView)
     }
 
     @objc open func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -235,9 +243,12 @@ open class BasePopupViewController: UIViewController {
         if popupItem.popupOption.hasBlur {
             view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
             (view as? PopupContainerView)?.isAbleToTouchLower = false
+            blurSpaceView.isAbleToTouchLower = false
         } else {
             view.backgroundColor = UIColor.clear
             (view as? PopupContainerView)?.isAbleToTouchLower = true
+            blurSpaceView.gestureRecognizers?.removeAll()
+            blurSpaceView.isAbleToTouchLower = true
         }
     }
 }
