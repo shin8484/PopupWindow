@@ -19,16 +19,36 @@ extension UIView {
             clipsToBounds = clips
 
         case .roundedCornerTop(let cornerSize):
-            let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerSize, height: cornerSize))
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = maskPath.cgPath
-            layer.mask = maskLayer
+            let maskView = UIView(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height))
+            let topRoundedRect = UIView(frame: bounds)
+            topRoundedRect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            topRoundedRect.backgroundColor = .black
+            topRoundedRect.clipsToBounds = true
+            topRoundedRect.layer.cornerRadius = cornerSize
+            maskView.addSubview(topRoundedRect)
+
+            let bottomRect = UIView(frame: CGRect(origin: CGPoint(x: 0, y: cornerSize), size: bounds.size))
+            bottomRect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            bottomRect.backgroundColor = .black
+            bottomRect.clipsToBounds = true
+            maskView.addSubview(bottomRect)
+            mask = maskView
 
         case .roundedCornerBottom(let cornerSize):
-            let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerSize, height: cornerSize))
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = maskPath.cgPath
-            layer.mask = maskLayer
+            let maskView = UIView(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height))
+            let bottomRoundedRect = UIView(frame: bounds)
+            bottomRoundedRect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            bottomRoundedRect.backgroundColor = .black
+            bottomRoundedRect.clipsToBounds = true
+            bottomRoundedRect.layer.cornerRadius = cornerSize
+            maskView.addSubview(bottomRoundedRect)
+
+            let topRect = UIView(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: cornerSize))
+            topRect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            topRect.backgroundColor = .black
+            topRect.clipsToBounds = true
+            maskView.addSubview(topRect)
+            mask = maskView
         }
     }
 }

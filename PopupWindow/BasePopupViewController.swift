@@ -137,6 +137,7 @@ open class BasePopupViewController: UIViewController {
             guard let me = self, let item = me.item else { return }
             me.addBlur(with: popupItem)
             item.view.frame = me.updatePopupViewFrame(with: popupItem)
+            item.view.mask?.frame = CGRect(origin: .zero, size: me.updatePopupViewFrame(with: popupItem).size)
             (item.view as? PopupViewContainable)?.containerView.alpha = 0
         }
         animator.addCompletion() { position in
