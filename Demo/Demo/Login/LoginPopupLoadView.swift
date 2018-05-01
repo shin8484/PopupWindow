@@ -30,4 +30,3 @@ class LoginPopupLoadView: UIView, PopupViewContainable, Nibable {
         activityIndicator.startAnimating()
     }
 }
-
