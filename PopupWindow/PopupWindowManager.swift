@@ -16,7 +16,7 @@ public class PopupWindowManager {
         if let rootViewController = rootViewController {
             popupContainerWindow = PopupContainerWindow()
             guard let popupContainerWindow = popupContainerWindow, rootViewController is BasePopupViewController else { return }
-            popupContainerWindow.frame = UIScreen.main.bounds
+            popupContainerWindow.frame = UIApplication.shared.keyWindow?.frame ?? UIScreen.main.bounds
             popupContainerWindow.backgroundColor = .clear
             popupContainerWindow.windowLevel = UIWindowLevelStatusBar + 1
             popupContainerWindow.rootViewController = rootViewController
