@@ -38,7 +38,7 @@ open class BasePopupViewController: UIViewController {
         isShowedPopupView = true
         configureBlurSpaceView()
         makePopupView(with: item)
-        showPopupView(duration: item.popupOption.duration, curve: .easeInOut, delayFactor: 0.0)
+        showPopupView(duration: item.popupOption.duration, curve: item.popupOption.easing, delayFactor: 0.0)
     }
 
     override open func viewDidLayoutSubviews() {
@@ -115,15 +115,15 @@ open class BasePopupViewController: UIViewController {
         animator.startAnimation()
     }
 
-    public func showPopupView(duration: TimeInterval, curve: UIViewAnimationCurve, delayFactor: CGFloat) {
-        let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
+    public func showPopupView(duration: TimeInterval, curve: Easing, delayFactor: CGFloat) {
+        let animator = Animator(duration: duration, easing: curve)
         animator.addAnimations({ [weak self] in
             guard let me = self, let item = me.item else { return }
             item.view.frame = me.updatePopupViewFrame(with: item)
         }, delayFactor: delayFactor)
         animator.startAnimation()
 
-        let backgroundAnimator = UIViewPropertyAnimator(duration: duration, curve: curve)
+        let backgroundAnimator = Animator(duration: duration, easing: curve)
         backgroundAnimator.addAnimations({ [weak self] in
             guard let me = self, let item = me.item else { return }
             me.addBlur(with: item)
@@ -131,8 +131,8 @@ open class BasePopupViewController: UIViewController {
         backgroundAnimator.startAnimation()
     }
 
-    public func transformPopupView(duration: TimeInterval, curve: UIViewAnimationCurve, popupItem: PopupItem, completion: @escaping ((UIViewAnimatingPosition) -> Void)) {
-        let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
+    public func transformPopupView(duration: TimeInterval, curve: Easing, popupItem: PopupItem, completion: @escaping ((UIViewAnimatingPosition) -> Void)) {
+        let animator = Animator(duration: duration, easing: curve)
         animator.addAnimations() { [weak self] in
             guard let me = self, let item = me.item else { return }
             me.addBlur(with: popupItem)
@@ -146,8 +146,8 @@ open class BasePopupViewController: UIViewController {
         animator.startAnimation()
     }
 
-    public func dismissPopupView(duration: TimeInterval, curve: UIViewAnimationCurve, delayFactor: CGFloat = 0.0, direction: PopupViewDirection, completion: @escaping ((UIViewAnimatingPosition) -> Void)) {
-        let animator = UIViewPropertyAnimator(duration: duration, curve: curve)
+    public func dismissPopupView(duration: TimeInterval, curve: Easing, delayFactor: CGFloat = 0.0, direction: PopupViewDirection, completion: @escaping ((UIViewAnimatingPosition) -> Void)) {
+        let animator = Animator(duration: duration, easing: curve)
         animator.addAnimations({ [weak self] in
             guard let me = self, let item = me.item else { return }
             me.view.backgroundColor = .clear

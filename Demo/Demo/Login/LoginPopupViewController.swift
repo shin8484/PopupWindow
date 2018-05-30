@@ -15,7 +15,7 @@ class LoginPopupViewController: BasePopupViewController {
         static let transformDuration: TimeInterval = 0.4
         static let maxWidth: CGFloat = 500
         static let landscapeSize: CGSize = CGSize(width: maxWidth, height: 237)
-        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, canTapDismiss: true)
+        static let popupOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, easing: .easeOutCubic, canTapDismiss: true)
         static let popupLoadingOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom)
         static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
@@ -73,4 +73,3 @@ class LoginPopupViewController: BasePopupViewController {
         }
     }
 }
-

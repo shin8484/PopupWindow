@@ -1,5 +1,5 @@
 PODS:
-  - PopupWindow (0.2.6)
+  - PopupWindow (0.2.16)
 
 DEPENDENCIES:
   - PopupWindow (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PopupWindow: 081948db1184ff8fafd94d371c891c0e93a694c9
+  PopupWindow: 8673e3f8980861f637128062b15bcb2c66dfad06
 
 PODFILE CHECKSUM: 7b0249df7d89ebb5eed5f0600d48913700e3edcf
 
