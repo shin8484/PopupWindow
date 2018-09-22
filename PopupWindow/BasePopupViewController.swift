@@ -176,7 +176,7 @@ open class BasePopupViewController: UIViewController {
 
     private func calcHeight(with popupItem: PopupItem) -> CGFloat {
         let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
-        if let _ = popupItem.landscapeSize, UIDeviceOrientationIsLandscape(deviceOrientation) {
+        if let _ = popupItem.landscapeSize, deviceOrientation.isLandscape {
             return calcLandscapeHeight(with: popupItem)
         } else {
             return calcPortraitHeight(with: popupItem)
@@ -210,7 +210,7 @@ open class BasePopupViewController: UIViewController {
         }
 
         let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
-        if let _ = popupItem.landscapeSize, UIDeviceOrientationIsLandscape(deviceOrientation) {
+        if let _ = popupItem.landscapeSize, deviceOrientation.isLandscape {
             return calcLandscapePositionY(with: popupItem)
         } else {
             return calcPortraitPositionY(with: popupItem)
